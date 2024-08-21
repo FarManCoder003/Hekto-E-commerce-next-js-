@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="bg-[#F2F0FF]">
       <div className="container mx-auto relative">
-        <div className="hidden 2xl:block absolute top-0 left-[-220px]">
+        <div className="hidden 2xl:block absolute top-0 left-[-190px]">
           <Image src={lightBulb} />
         </div>
         <div className="hidden xl:block absolute top-[40px] right-[-35px]">
