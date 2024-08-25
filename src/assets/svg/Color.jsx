@@ -14,7 +14,7 @@ const SvgComponent = () => (
       x={38}
       fill="#00009D"
       rx={2}
-      className="group-hover:fill-[#FFEAC1]"
+      className={`group-hover:fill-[#FFEAC1]`}
     />
   </svg>
 );

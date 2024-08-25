@@ -1,9 +1,8 @@
-import React from "react";
 import logo from "@/assets/logo.png";
+import { Search } from "@/assets/svg/Search";
+import { Josefin_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { Josefin_Sans } from "next/font/google";
-import { Search } from "@/assets/svg/Search";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -22,7 +21,7 @@ const Navbar = () => {
             <Link href={"/"}>Pages</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
-            <Link href={"/"}>Products</Link>
+            <Link href={"/Products"}>Products</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
             <Link href={"/"}>Blog</Link>
