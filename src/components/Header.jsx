@@ -1,9 +1,9 @@
-import { FaCartShopping } from "react-icons/fa6";
-import { Josefin_Sans } from "next/font/google";
-import { Mail } from "@/assets/svg/Mail";
 import { Call } from "@/assets/svg/Call";
 import { Login } from "@/assets/svg/Login";
+import { Mail } from "@/assets/svg/Mail";
 import { Wishlist } from "@/assets/svg/Wishlist";
+import { Josefin_Sans } from "next/font/google";
+import { FaCartShopping } from "react-icons/fa6";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 

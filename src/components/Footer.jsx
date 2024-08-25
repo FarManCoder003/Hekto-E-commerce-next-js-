@@ -1,8 +1,7 @@
-import React from "react";
-import { Josefin_Sans } from "next/font/google";
 import { Facebook } from "@/assets/svg/Facebook";
 import { Instagram } from "@/assets/svg/Instagram";
 import { Twitter } from "@/assets/svg/Twitter";
+import { Josefin_Sans } from "next/font/google";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
