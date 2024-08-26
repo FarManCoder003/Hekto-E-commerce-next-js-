@@ -39,6 +39,7 @@ import trendingProduct3 from "@/assets/trending product 3.png";
 import featureSofa from "@/assets/unique feature sofa.png";
 import { Josefin_Sans, Lato } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 
 async function getData() {
   try {
@@ -317,56 +318,62 @@ const Home = async () => {
               {displayedProducts.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[30%] group overflow-hidden mb-[64px]"
+                  className="w-[30%] group overflow-hidden mb-[64px] cursor-pointer"
                 >
-                  <div className="relative bg-[#F7F7F7] group-hover:bg-[#fff] w-full h-[270px] pt-[15px] pb-[8px] duration-300 ease-in">
-                    <div className="absolute top-[25px] left-[-100px] group-hover:left-[18px] duration-300 ease-in-out">
-                      <Image alt="" src={sale} className="w-[84px] h-[56px]" />
-                    </div>
-                    <div className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out">
-                      <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#EEEFFB]">
-                        <Cart />
+                  <Link href={`/ProductDetails/${item.id}`}>
+                    <div className="relative bg-[#F7F7F7] group-hover:bg-[#fff] w-full h-[270px] pt-[15px] pb-[8px] duration-300 ease-in">
+                      <div className="absolute top-[25px] left-[-100px] group-hover:left-[18px] duration-300 ease-in-out">
+                        <Image
+                          alt=""
+                          src={sale}
+                          className="w-[84px] h-[56px]"
+                        />
                       </div>
-                      <div className="py-[15px]">
-                        <Heart />
-                      </div>
-                      <div className="">
-                        <SearchPlus />
-                      </div>
-                    </div>
-                    <Image
-                      alt={item.title}
-                      src={item.thumbnail}
-                      width="2000"
-                      height="2000"
-                      className="mx-auto w-[260px] h-[250px]"
-                    />
-                  </div>
-                  <div className="flex justify-between pt-[15px]">
-                    <div
-                      className={`${josefinSans.className} text-[#151875] text-[16px] font-normal`}
-                    >
-                      {item.title}
-                    </div>
-                    <div className="flex gap-[10px] items-center">
-                      <div
-                        className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
-                      >
-                        ${item.price}
-                      </div>
-                      {item.discountPercentage > 0 && (
-                        <div
-                          className={`${josefinSans.className} text-[#FB2448] text-[12px] font-normal line-through`}
-                        >
-                          $
-                          {(
-                            (item.price / (100 - item.discountPercentage)) *
-                            100
-                          ).toFixed(2)}
+                      <div className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out">
+                        <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#EEEFFB]">
+                          <Cart />
                         </div>
-                      )}
+                        <div className="py-[15px]">
+                          <Heart />
+                        </div>
+                        <div className="">
+                          <SearchPlus />
+                        </div>
+                      </div>
+                      <Image
+                        alt={item.title}
+                        src={item.thumbnail}
+                        width="2000"
+                        height="2000"
+                        className="mx-auto w-[260px] h-[250px]"
+                      />
                     </div>
-                  </div>
+                    <div className="flex justify-between pt-[15px]">
+                      <div
+                        className={`${josefinSans.className} text-[#151875] text-[16px] font-normal`}
+                      >
+                        {item.title}
+                      </div>
+                      <div className="flex gap-[10px] items-center">
+                        <div
+                          className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
+                        >
+                          ${item.price}
+                        </div>
+                        {item.discountPercentage > 0 && (
+                          <div
+                            className={`${josefinSans.className} text-[#FB2448] text-[12px] font-normal line-through`}
+                          >
+                            $
+                            {(
+                              (item.price / (100 - item.discountPercentage)) *
+                              100
+                            ).toFixed(2)}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               ))}
             </div>

@@ -25,6 +25,9 @@
 .box-shadow4 {
   box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.05);
 }
+.box-shadow5 {
+  box-shadow: 0px 0px 25px 10px #f6f4fd;
+}
 .box {
   display: block;
   position: relative;
