@@ -1,10 +1,6 @@
 import blog1 from "@/assets/blog 1.png";
 import blog2 from "@/assets/blog 2.png";
 import blog3 from "@/assets/blog 3.png";
-import chair1 from "@/assets/chair 1.png";
-import chair2 from "@/assets/chair 2.png";
-import chair3 from "@/assets/chair 3.png";
-import chair4 from "@/assets/chair 4.png";
 import company from "@/assets/company.png";
 import discountSofa from "@/assets/discount sofa.png";
 import lightBulb from "@/assets/light bulb.png";
@@ -15,13 +11,11 @@ import { Calender } from "@/assets/svg/Calender";
 import { Call2 } from "@/assets/svg/Call2";
 import { Cart } from "@/assets/svg/Cart";
 import { Check } from "@/assets/svg/Check";
-import { Color } from "@/assets/svg/Color";
 import { Currency } from "@/assets/svg/Currency";
 import { Heart } from "@/assets/svg/Heart";
 import { Medal } from "@/assets/svg/Medal";
 import { Pen } from "@/assets/svg/Pen";
 import { SearchPlus } from "@/assets/svg/SearchPlus";
-import { Slider } from "@/assets/svg/Slider";
 import { Slider2 } from "@/assets/svg/Slider2";
 import { Truck } from "@/assets/svg/Truck";
 import topCategories1 from "@/assets/top categories 1.png";
@@ -37,6 +31,7 @@ import trendingProduct1 from "@/assets/trending product 1.png";
 import trendingProduct2 from "@/assets/trending product 2.png";
 import trendingProduct3 from "@/assets/trending product 3.png";
 import featureSofa from "@/assets/unique feature sofa.png";
+import Carousel from "@/components/Carousel";
 import { Josefin_Sans, Lato } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -103,190 +98,8 @@ const Home = async () => {
       <div className="container mx-auto py-[64px]">
         <div className="pb-[64px]">
           <h2 className={`${lato.className} text-center`}>Featured Products</h2>
-          <div className="flex justify-between my-[53px]">
-            <div className="w-[22%] box-shadow group">
-              <div className="bg-[#F6F7FB] group-hover:bg-[#F7F7F7] w-[100%] h-[236px] pt-[46px] relative overflow-hidden">
-                <button
-                  className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[9px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] rounded-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium duration-300 ease-in-out`}
-                >
-                  View Details
-                </button>
-                <div className="absolute top-[11px] left-[-100px] group-hover:left-[11px] flex gap-[16px] items-center duration-300 ease-in-out">
-                  <div className="w-[30px] h-[30px] rounded-full pt-[8px] bg-[#EEEFFB]">
-                    <Cart />
-                  </div>
-                  <div className="">
-                    <Heart />
-                  </div>
-                  <div>
-                    <SearchPlus />
-                  </div>
-                </div>
-                <Image
-                  alt=""
-                  src={chair1}
-                  className="w-[178px] h-[178px] mx-auto"
-                />
-              </div>
-              <div className="text-center group-hover:bg-[#2F1AC4]">
-                <div
-                  className={`${lato.className} text-[#FB2E86] group-hover:text-[#fff] text-[18px] font-bold py-[15px]`}
-                >
-                  Cantilever chair
-                </div>
-                <div className="">
-                  <Color />
-                </div>
-                <div
-                  className={`${josefinSans.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal py-[12px]`}
-                >
-                  Code - Y523201
-                </div>
-                <div
-                  className={`${lato.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal pb-[12px]`}
-                >
-                  $42.00
-                </div>
-              </div>
-            </div>
-            <div className="w-[22%] box-shadow group">
-              <div className="bg-[#F6F7FB] group-hover:bg-[#F7F7F7] w-[100%] h-[236px] pt-[46px] relative overflow-hidden">
-                <button
-                  className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[9px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] rounded-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium duration-300 ease-in-out`}
-                >
-                  View Details
-                </button>
-                <div className="absolute top-[11px] left-[-100px] group-hover:left-[11px] flex gap-[16px] items-center duration-300 ease-in-out">
-                  <div className="w-[30px] h-[30px] rounded-full pt-[8px] bg-[#EEEFFB]">
-                    <Cart />
-                  </div>
-                  <div className="">
-                    <Heart />
-                  </div>
-                  <div className="">
-                    <SearchPlus />
-                  </div>
-                </div>
-                <Image
-                  alt=""
-                  src={chair2}
-                  className="w-[178px] h-[178px] mx-auto"
-                />
-              </div>
-              <div className="text-center group-hover:bg-[#2F1AC4]">
-                <div
-                  className={`${lato.className} text-[#FB2E86] group-hover:text-[#fff] text-[18px] font-bold py-[15px]`}
-                >
-                  Cantilever chair
-                </div>
-                <div className="">
-                  <Color />
-                </div>
-                <div
-                  className={`${josefinSans.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal py-[12px]`}
-                >
-                  Code - Y523201
-                </div>
-                <div
-                  className={`${lato.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal pb-[12px]`}
-                >
-                  $42.00
-                </div>
-              </div>
-            </div>
-            <div className="w-[22%] box-shadow group">
-              <div className="bg-[#F6F7FB] group-hover:bg-[#F7F7F7] w-[100%] h-[236px] pt-[46px] relative overflow-hidden">
-                <button
-                  className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[9px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] rounded-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium duration-300 ease-in-out`}
-                >
-                  View Details
-                </button>
-                <div className="absolute top-[11px] left-[-100px] group-hover:left-[11px] flex gap-[16px] items-center duration-300 ease-in-out">
-                  <div className="w-[30px] h-[30px] rounded-full pt-[8px] bg-[#EEEFFB]">
-                    <Cart />
-                  </div>
-                  <div className="">
-                    <Heart />
-                  </div>
-                  <div className="">
-                    <SearchPlus />
-                  </div>
-                </div>
-                <Image
-                  alt=""
-                  src={chair3}
-                  className="w-[178px] h-[178px] mx-auto"
-                />
-              </div>
-              <div className="text-center group-hover:bg-[#2F1AC4]">
-                <div
-                  className={`${lato.className} text-[#FB2E86] group-hover:text-[#fff] text-[18px] font-bold py-[15px]`}
-                >
-                  Cantilever chair
-                </div>
-                <div className="">
-                  <Color />
-                </div>
-                <div
-                  className={`${josefinSans.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal py-[12px]`}
-                >
-                  Code - Y523201
-                </div>
-                <div
-                  className={`${lato.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal pb-[12px]`}
-                >
-                  $42.00
-                </div>
-              </div>
-            </div>
-            <div className="w-[22%] box-shadow group">
-              <div className="bg-[#F6F7FB] group-hover:bg-[#F7F7F7] w-[100%] h-[236px] pt-[46px]  relative overflow-hidden">
-                <button
-                  className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[9px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] rounded-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium duration-300 ease-in-out`}
-                >
-                  View Details
-                </button>
-                <div className="absolute top-[11px] left-[-100px] group-hover:left-[11px] flex gap-[16px] items-center duration-300 ease-in-out">
-                  <div className="w-[30px] h-[30px] rounded-full pt-[8px] bg-[#EEEFFB]">
-                    <Cart />
-                  </div>
-                  <div className="">
-                    <Heart />
-                  </div>
-                  <div className="">
-                    <SearchPlus />
-                  </div>
-                </div>
-                <Image
-                  alt=""
-                  src={chair4}
-                  className="w-[178px] h-[178px] mx-auto"
-                />
-              </div>
-              <div className="text-center group-hover:bg-[#2F1AC4]">
-                <div
-                  className={`${lato.className} text-[#FB2E86] group-hover:text-[#fff] text-[18px] font-bold py-[15px]`}
-                >
-                  Cantilever chair
-                </div>
-                <div className="">
-                  <Color />
-                </div>
-                <div
-                  className={`${josefinSans.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal py-[12px]`}
-                >
-                  Code - Y523201
-                </div>
-                <div
-                  className={`${lato.className} text-[#151875] group-hover:text-[#fff] text-[14px] font-normal pb-[12px]`}
-                >
-                  $42.00
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="">
-            <Slider />
+          <div className="w-[100%] mx-auto pt-[48px]">
+            <Carousel />
           </div>
         </div>
         <div className="pb-[64px]">

@@ -52,19 +52,17 @@ const ProductDetails = ({ productId }) => {
   if (error) return <></>;
 
   return (
-    <div className="h-[450px] px-[25px] py-[25px] rounded-[2px] box-shadow5 my-[121px]">
+    <div className="w-full h-[470px] p-[25px] rounded-[2px] box-shadow5 my-[121px]">
       <div className="flex">
         <div className="">
-          {item.images.slice(0, 3).map((image, index) => (
+          {item.images.map((image, index) => (
             <Image
               key={index}
               src={image}
               alt={`${item.title} image ${index + 1}`}
               width={177}
-              height={177}
-              className={`w-[182px] bg-[#F6F7FB] ${
-                index < 2 ? "mb-[25px]" : ""
-              }`}
+              height={1}
+              className="w-[182px] bg-[#F6F7FB] mb-[25px]"
             />
           ))}
         </div>
