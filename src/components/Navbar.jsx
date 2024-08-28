@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link href={"/Products"}>Products</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
-            <Link href={"/"}>Blog</Link>
+            <Link href={"/Blog"}>Blog</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
             <Link href={"/"}>Shop</Link>
