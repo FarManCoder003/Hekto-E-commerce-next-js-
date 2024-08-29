@@ -18,19 +18,19 @@ const Navbar = () => {
             <Link href={"/"}>Home</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
-            <Link href={"/"}>Pages</Link>
-          </li>
-          <li className="hover:text-[#FB2E86]">
             <Link href={"/Products"}>Products</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
             <Link href={"/Blog"}>Blog</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
-            <Link href={"/"}>Shop</Link>
+            <Link href={"/About"}>About</Link>
           </li>
           <li className="hover:text-[#FB2E86]">
-            <Link href={"/"}>Contact</Link>
+            <Link href={"/Contact"}>Contact</Link>
+          </li>
+          <li className="hover:text-[#FB2E86]">
+            <Link href={"/FAQ"}>FAQ</Link>
           </li>
         </ul>
         <div className="flex">
