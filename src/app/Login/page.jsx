@@ -47,7 +47,7 @@ const Login = () => {
         </button>
         <Link href="/SignUp">
           <div className="text-[#9096B2] text-[17px] font-normal">
-            Don't have an Account? Create account
+            Don&apos;t have an Account? Create account
           </div>
         </Link>
       </div>
