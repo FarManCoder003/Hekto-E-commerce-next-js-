@@ -37,6 +37,9 @@
 .box-shadow7 {
   box-shadow: 0px 0px 17.004px 0px rgba(0, 0, 0, 0.25);
 }
+.box-shadow8 {
+  box-shadow: 0px 0px 25px 10px #f6f4fd;
+}
 .box {
   display: block;
   position: relative;
@@ -87,7 +90,6 @@
   height: 10px;
   border-width: 0 3px 3px 0;
 }
-
 .checkmark2 {
   position: absolute;
   top: 5px;
@@ -154,6 +156,55 @@
 }
 .box input:checked ~ .checkmark3:after {
   border: solid white;
+  width: 5px;
+  height: 10px;
+  border-width: 0 3px 3px 0;
+}
+.box2 {
+  display: block;
+  position: relative;
+  height: 30px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.box2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #31ff9178;
+}
+.box2:hover input ~ .checkmark4 {
+  background-color: #31ff9178;
+}
+.box2 input:checked ~ .checkmark4 {
+  background-color: #19d16f;
+}
+.checkmark4:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #19d16f;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.box2 input:checked ~ .checkmark4:after {
+  border: solid #ffffff;
   width: 5px;
   height: 10px;
   border-width: 0 3px 3px 0;

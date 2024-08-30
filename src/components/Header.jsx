@@ -1,9 +1,10 @@
 import { Call } from "@/assets/svg/Call";
 import { Login } from "@/assets/svg/Login";
 import { Mail } from "@/assets/svg/Mail";
+import { NavCart } from "@/assets/svg/NavCart";
 import { Wishlist } from "@/assets/svg/Wishlist";
 import { Josefin_Sans } from "next/font/google";
-import { FaCartShopping } from "react-icons/fa6";
+import Link from "next/link";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -82,14 +83,14 @@ const Header = () => {
               EUR
             </option>
           </select>
-          <div className="flex">
+          <Link href="/Login" className="flex">
             <div className="text-[#F1F1F1] text-[16px] font-semibold">
               Login
             </div>
             <div className="">
               <Login />
             </div>
-          </div>
+          </Link>
           <div className="flex items-center gap-1">
             <div className="text-[#F1F1F1] text-[16px] font-semibold">
               Wishlist
@@ -98,8 +99,10 @@ const Header = () => {
               <Wishlist />
             </div>
           </div>
-          <div className="text-white">
-            <FaCartShopping />
+          <div className="">
+            <Link href="/Cart">
+              <NavCart />
+            </Link>
           </div>
         </div>
       </div>
