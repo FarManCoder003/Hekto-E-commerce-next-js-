@@ -3,6 +3,7 @@ import { Search } from "@/assets/svg/Search";
 import { Josefin_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import NavSearch from "./NavSearch";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -34,10 +35,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="flex">
-          <input
-            type="text"
-            className="w-[266px] h-[40px] pl-[10px] bg-[#D9D9D9] outline-none"
-          />
+          <NavSearch />
           <div className="px-[15px] py-[9px] bg-[#FB2E86] cursor-pointer">
             <Search />
           </div>
