@@ -15,6 +15,9 @@
   h5 {
     @apply text-[#151875] text-[22px] font-semibold;
   }
+  input {
+    @apply !outline-none;
+  }
 }
 .box-shadow {
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);

@@ -106,10 +106,10 @@ const Carousel = () => {
   if (error) return <></>;
 
   return (
-    <Slider className="carousel" {...settings}>
+    <Slider {...settings}>
       {products.map((item, index) => (
         <div key={index} className="px-[10px] py-5 group">
-          <div className="w-[275px] mx-auto box-shadow">
+          <div className="w-[275px] 2xl:w-[330px] mx-auto p-0 box-shadow">
             <div className="bg-[#F6F7FB] group-hover:bg-[#F7F7F7] w-full h-[200px] pt-[46px] relative overflow-hidden">
               <Link href={`/ProductDetails/${item.id}`}>
                 <button
