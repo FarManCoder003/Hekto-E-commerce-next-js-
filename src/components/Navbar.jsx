@@ -2,39 +2,20 @@ import logo from "@/assets/logo.png";
 import { Search } from "@/assets/svg/Search";
 import { Josefin_Sans } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import NavSearch from "./NavSearch";
+import NavbarItems from "./NavbarItems";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
 const Navbar = () => {
   return (
     <div className={`${josefinSans.className} container mx-auto`}>
-      <div className="flex items-center justify-between h-[70px]">
-        <div>
+      <div className="lg:flex items-center justify-between lg:h-[70px] px-1 lg:px-0 py-[16px] lg:py-0">
+        <div className="flex px-[25px] lg:px-0 lg:gap-x-[200px] items-center justify-between">
           <Image src={logo} />
+          <NavbarItems/>
         </div>
-        <ul className="flex gap-[35px] text-[#0D0E43] text-[16px] font-normal">
-          <li className="hover:text-[#FB2E86]">
-            <Link href={"/"}>Home</Link>
-          </li>
-          <li className="hover:text-[#FB2E86]">
-            <Link href={"/Products"}>Products</Link>
-          </li>
-          <li className="hover:text-[#FB2E86]">
-            <Link href={"/Blog"}>Blog</Link>
-          </li>
-          <li className="hover:text-[#FB2E86]">
-            <Link href={"/About"}>About</Link>
-          </li>
-          <li className="hover:text-[#FB2E86]">
-            <Link href={"/Contact"}>Contact</Link>
-          </li>
-          <li className="hover:text-[#FB2E86]">
-            <Link href={"/FAQ"}>FAQ</Link>
-          </li>
-        </ul>
-        <div className="flex">
+        <div className="flex justify-center mt-[24px] lg:mt-0">
           <NavSearch />
           <div className="px-[15px] py-[9px] bg-[#FB2E86] cursor-pointer">
             <Search />
