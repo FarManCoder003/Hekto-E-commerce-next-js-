@@ -10,7 +10,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const Checkout = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -24,8 +24,8 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      <div className={`${josefinSans.className} container mx-auto`}>
-        <div className="flex gap-x-[30px] pt-[74px]">
+      <div className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}>
+        <div className="lg:flex gap-x-[30px] pt-[74px]">
           <div className="">
             <div className="text-[#1D3178] text-[24px] font-bold pb-[16px]">
               Checkout
@@ -33,9 +33,9 @@ const Checkout = () => {
             <div className="text-[#1D3178] text-[12px] font-normal pb-[25px]">
               Contact Information
             </div>
-            <div className="w-[770px] bg-[#F8F8FD] rounded-[3px] px-[30px] py-[62px]">
-              <div className="flex justify-between pb-[42px]">
-                <div className="text-[#1D3178] text-[18px] font-bold">
+            <div className="w-full lg:w-[770px] bg-[#F8F8FD] rounded-[3px] px-[30px] py-[36px] lg:py-[62px]">
+              <div className="lg:flex justify-between pb-[42px]">
+                <div className="text-[#1D3178] text-[18px] font-bold pb-3 lg:pb-0">
                   Contact Information
                 </div>
                 <Link href="/Login">
@@ -49,7 +49,7 @@ const Checkout = () => {
                 className="w-full text-[#C1C8E1] text-[14px] font-semibold pb-[13px] border-b-[2px] border-b-[#BFC6E0] overflow-hidden mb-[32px] bg-transparent"
                 placeholder="Email or mobile phone number"
               />
-              <label className="box2 flex items-center gap-x-[8px] pb-[109px]">
+              <label className="box2 flex items-center gap-x-[8px] pb-[48px] lg:pb-[109px]">
                 <input type="checkbox" className="checkmark4" />
                 <span className="checkmark4"></span>
                 <div className="text-[#8A91AB] text-[12px] font-medium ">
@@ -59,7 +59,7 @@ const Checkout = () => {
               <div className="text-[#1D3178] text-[18px] font-bold pb-[43px]">
                 Shipping Address
               </div>
-              <div className="flex gap-x-[30px]">
+              <div className="flex gap-x-[15px] lg:gap-x-[30px]">
                 <input
                   type="text"
                   placeholder="First name (optional)"
@@ -81,7 +81,7 @@ const Checkout = () => {
                 placeholder="City"
                 className="w-full text-[#C1C8E1] text-[14px] font-medium pb-[14px] mt-[39px] border-b-[2px] bg-transparent border-b-[#BFC6E0] overflow-hidden"
               />
-              <div className="flex gap-x-[30px] mt-[39px]">
+              <div className="flex gap-x-[15px] lg:gap-x-[30px] mt-[39px]">
                 <input
                   type="text"
                   placeholder="Bangladesh"
@@ -94,7 +94,7 @@ const Checkout = () => {
                 />
               </div>
               <Link href="/OrderComplete">
-                <button className="w-[182px] h-[44px] bg-[#FB2E86] rounded-[2px] text-[#fff] text-[16px] font-semibold mt-[117px]">
+                <button className="w-[182px] h-[44px] bg-[#FB2E86] rounded-[2px] text-[#fff] text-[16px] font-semibold mt-[64px] lg:mt-[117px]">
                   Continue Shipping
                 </button>
               </Link>
@@ -102,7 +102,7 @@ const Checkout = () => {
           </div>
           <div className="mt-[94px]">
             <div className="flex justify-between items-center pb-[15px] mb-[15px] border-b border-b-[#E1E1E4]">
-              <div className="w-[265px]">
+              <div className="w-full lg:w-[265px]">
                 <div className="flex gap-x-[17px]">
                   <div className="relative w-[83px] h-[87px] bg-[#C4C4C4] rounded-[3px]">
                     <Image src={chair1} alt="item.title" />
@@ -127,7 +127,7 @@ const Checkout = () => {
                 $32.00
               </div>
             </div>
-            <div className="w-[371px] h-[284px] rounded-[3px] bg-[#F4F4FC] p-[30px] pt-[36px] mt-[42px]">
+            <div className="w-full lg:w-[371px] h-[284px] rounded-[3px] bg-[#F4F4FC] p-[30px] pt-[36px] mt-[42px]">
               <div className="flex justify-between items-center mb-[34px] pb-[13px] border-b-[2px] border-b-[#E8E6F1]">
                 <div className="text-[#1D3178] text-[18px] font-semibold">
                   Subtotals:
@@ -156,8 +156,8 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      <div className="my-[83px]">
-        <Image src={company} className="w-[904px] h-[93px] mx-auto" />
+      <div className="my-[48px] lg:my-[83px]">
+        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
       </div>
     </>
   );

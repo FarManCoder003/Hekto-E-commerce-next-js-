@@ -7,7 +7,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const SignUp = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -22,7 +22,7 @@ const SignUp = () => {
         </div>
       </div>
       <div
-        className={`${josefinSans.className} w-[544px] h-[474px] mt-[120px] mx-auto box-shadow8 p-[50px] text-center`}
+        className={`${josefinSans.className} w-[95%] lg:w-[544px] lg:h-[474px] mt-[48px] lg:mt-[120px] mx-auto box-shadow8 p-[24px] lg:p-[50px] text-center`}
       >
         <div className="text-[#000000] text-[32px] font-bold">Sign up</div>
         <div className="text-[#9096B2] text-[17px] font-normal pt-[7px] pb-[37px]">
@@ -42,8 +42,8 @@ const SignUp = () => {
           Create account
         </button>
       </div>
-      <div className="my-[83px]">
-        <Image src={company} className="w-[904px] h-[93px] mx-auto" />
+      <div className="my-[48px] lg:my-[83px]">
+        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
       </div>
     </>
   );

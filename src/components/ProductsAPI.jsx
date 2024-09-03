@@ -65,10 +65,10 @@ const ProductsAPI = () => {
 
   return (
     <>
-      <div className="flex justify-between py-[124px]">
+      <div className="lg:flex justify-between py-[124px]">
         <div>
           <div
-            className={`${josefinSans.className} text-[#151875] text-[22px] font-light`}
+            className={`${josefinSans.className} text-[#151875] text-[20px] font-light`}
           >
             E-commerce Accessories & Fashion item
           </div>
@@ -79,16 +79,16 @@ const ProductsAPI = () => {
           </div>
         </div>
         <div
-          className={`${josefinSans.className} flex items-center gap-x-[24px]`}
+          className={`${josefinSans.className} flex flex-wrap items-center gap-[24px] mt-[24px] lg:mt-0`}
         >
-          <div className="text-[#3F509E] text-[16px] font-normal">
+          <div className="flex items-center text-[#3F509E] text-[16px] font-normal">
             Per Page:
             <input
               type="text"
               className="w-[54px] h-[24px] ml-[8px] pl-[7px] text-[#8A8FB9] font-normal border border-[#E7E6EF] outline-none"
             />
           </div>
-          <div className="text-[#3F509E] text-[16px] font-normal">
+          <div className="flex text-[#3F509E] text-[16px] font-normal">
             Sort By:
             <select
               name="sort"
@@ -119,13 +119,13 @@ const ProductsAPI = () => {
           <div>
             <input
               type="text"
-              className="w-[162px] h-[30px] pl-[7px] text-[#8A8FB9] font-normal border border-[#E7E6EF] outline-none"
+              className="hidden lg:block w-[162px] h-[30px] pl-[7px] text-[#8A8FB9] font-normal border border-[#E7E6EF] outline-none"
             />
           </div>
         </div>
       </div>
       <div
-        className={` ${viewMode === "activeList" ? "flex gap-x-[35px]" : ""}`}
+        className={` ${viewMode === "activeList" ? "lg:flex gap-x-[35px]" : ""}`}
       >
         {viewMode === "activeList" ? (
           <div className={`${lato.className}`}>
@@ -306,7 +306,7 @@ const ProductsAPI = () => {
               />
               <Search2 />
             </div>
-            <div className="">
+            <div className="mb-[50px] lg:mb-0">
               <h3>Filter By Color</h3>
               <div className="flex gap-x-[8px]">
                 <div className="">
@@ -349,7 +349,7 @@ const ProductsAPI = () => {
           className={`${
             viewMode === "activeList"
               ? "block"
-              : "flex flex-wrap justify-center gap-x-[53px] gap-y-[81px]"
+              : "flex flex-wrap justify-center lg:gap-x-[53px] gap-y-[81px]"
           }`}
         >
           {products.map((item, index) => (
@@ -357,25 +357,25 @@ const ProductsAPI = () => {
               {viewMode == "activeList" ? (
                 <Link href={`/ProductDetails/${item.id}`}>
                   <div
-                    className={`${josefinSans.className} flex items-center gap-x-[32px] my-[34px] pl-[20px] py-[20px] box-shadow3 cursor-pointer`}
+                    className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
                   >
                     <Image
                       alt={item.title}
                       src={item.thumbnail}
                       width={250}
                       height={250}
-                      className="w-[250px] h-[250px] bg-[#F6F7FB]"
+                      className="w-[100px] h-[100px] lg:w-[250px] lg:h-[250px] bg-[#F6F7FB]"
                     />
                     <div className="items-center">
-                      <div className="flex items-center gap-x-[18px]">
-                        <div className="text-[#111C85] text-[19px] font-bold">
+                      <div className="flex items-center gap-x-[8px] lg:gap-x-[18px]">
+                        <div className="text-[#111C85] text-[16px] lg:text-[19px] font-bold">
                           {item.title}
                         </div>
                         <div className="">
                           <CircleColor />
                         </div>
                       </div>
-                      <div className="flex items-center gap-x-[10px] my-[15px]">
+                      <div className="flex items-center gap-x-[10px] my-[5px] lg:my-[15px]">
                         <div className="text-[#151875] text-[14px] font-normal">
                           ${item.price}
                         </div>
@@ -392,11 +392,12 @@ const ProductsAPI = () => {
                           {renderRating(item.rating)}
                         </div>
                       </div>
-                      <div className="max-w-[691px] text-[#9295AA] text-[17px] font-normal">
+                      <div className="max-w-[691px] text-[#9295AA] text-[9px] lg:text-[17px] font-normal">
                         {item.description}
                       </div>
-                      <div className="flex items-center gap-x-[20px] mt-[30px]">
-                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                      <div className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]">Add to cart</div>
+                      <div className="hidden lg:flex items-center gap-x-[20px] mt-[30px]">
+                        <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
                           <Cart />
                         </div>
                         <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">

@@ -9,13 +9,13 @@ const Footer = () => {
   return (
     <div className={`${josefinSans.className}`}>
       <div className="bg-[#EEEFFB]">
-        <div className="container mx-auto flex justify-between py-[64px]">
+        <div className="container mx-auto lg:flex justify-between px-1 lg:px-0 py-[64px]">
           <div className="">
             <div className="text-[#000] text-[38px] font-bold">Hekto</div>
             <div className="flex mt-[31px] mb-[25px]">
               <input
                 type="text"
-                className="w-[377px] h-[44px] rounded-[3px] pl-[20px]  text-[#8A8FB9] bg-[rgba(255, 255, 255, .45)] outline-none"
+                className="w-[100%] lg:w-[377px] h-[44px] rounded-[3px] pl-[20px]  text-[#8A8FB9] bg-[rgba(255, 255, 255, .45)] outline-none"
                 placeholder="Enter Email Address"
               />
               <button className="w-[135px] h-[44px] text-[#EEEFFB] rounded-[3px] bg-[#FB2E86]">
@@ -29,8 +29,8 @@ const Footer = () => {
               17 Princess Road, London, Greater London NW1 8JR, UK
             </div>
           </div>
-          <ul>
-            <li className="text-[#000] text-[22px] font-semibold mb-[21px]">
+          <ul className="inline-block lg:block">
+            <li className="text-[#000] text-[22px] mt-3 lg:mt-0 font-semibold mb-[21px]">
               Categories
             </li>
             <li className="text-[#8A8FB9] text-[16px] font-normal my-[21px]">
@@ -49,7 +49,7 @@ const Footer = () => {
               Waterproof Headphones
             </li>
           </ul>
-          <ul>
+          <ul className="inline-block lg:block text-center lg:text-start">
             <li className="text-[#000] text-[22px] font-semibold mb-[21px]">
               Customer Care
             </li>
@@ -69,7 +69,7 @@ const Footer = () => {
               Order Tracking
             </li>
           </ul>
-          <ul>
+          <ul className="">
             <li className="text-[#000] text-[22px] font-semibold mb-[21px]">
               Pages
             </li>
@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-[#E7E4F8]">
-        <div className="container mx-auto flex justify-between items-center py-[17px]">
+        <div className="container mx-auto flex justify-between items-center px-1 lg:px-0 py-[17px]">
           <div className="text-[#9DA0AE] text-[16px] font-semibold">
             ©Webecy - All Rights Reserved
           </div>

@@ -14,7 +14,7 @@ const lato = Lato({ subsets: ["latin"], weight: ["400", "700"] });
 const About = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -28,16 +28,16 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
-        <div className="flex justify-center gap-x-[30px] pt-[119px]">
-          <div className="w-[48%]">
+      <div className="container mx-auto px-2 lg:px-0">
+        <div className="lg:flex justify-center gap-x-[30px] pt-[48px] lg:pt-[119px]">
+          <div className="w-[100%] lg:w-[48%]">
             <Image src={AboutImage} />
           </div>
-          <div className={`${josefinSans.className} w-[48%]`}>
-            <div className="text-[#151875] text-[36px] font-semibold pt-[41px]">
+          <div className={`${josefinSans.className} w-[100%] lg:w-[48%]`}>
+            <div className="text-[#151875] text-[36px] font-semibold text-center lg:text-start pt-[41px]">
               Know About Our E-commerce Business, History
             </div>
-            <div className="text-[#8A8FB9] text-[16px] font-semibold pt-[14px] pb-[70px]">
+            <div className="text-[#8A8FB9] text-[16px] font-semibold pt-[14px] text-justify lg:text-start pb-[48px] lg:pb-[70px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
               neque ultrices mattis aliquam, malesuada diam est. Malesuada sem
               tristique amet erat vitae eget dolor lobortis. Accumsan faucibus
@@ -51,8 +51,8 @@ const About = () => {
         <div className="text-[#000] text-[42px] font-bold text-center pt-[141px] pb-[67px]">
           Our Features
         </div>
-        <div className="flex justify-between">
-          <div className="w-[23%] h-[320px] hover:border-b-[2px] border-b-[#FF9100] box-shadow2">
+        <div className="flex flex-wrap justify-center lg:justify-between">
+          <div className="w-[97%] lg:w-[23%] lg:h-[320px] border-b-[2px] border-b-[white] hover:border-b-[#FF9100] mb-[36px] pb-6 lg:pb-0 lg:mb-0 box-shadow2">
             <div className="pt-[56px]">
               <Truck />
             </div>
@@ -68,7 +68,7 @@ const About = () => {
               <br /> Massa purus gravida.
             </div>
           </div>
-          <div className="w-[23%] h-[320px] hover:border-b-[2px] border-b-[#FF9100] box-shadow2">
+          <div className="w-[97%] lg:w-[23%] lg:h-[320px] border-b-[2px] border-b-[white] hover:border-b-[#FF9100] mb-[36px] pb-6 lg:pb-0 lg:mb-0 box-shadow2">
             <div className="pt-[56px]">
               <Currency />
             </div>
@@ -84,7 +84,7 @@ const About = () => {
               <br /> Massa purus gravida.
             </div>
           </div>
-          <div className="w-[23%] h-[320px] hover:border-b-[2px] border-b-[#FF9100] box-shadow2">
+          <div className="w-[97%] lg:w-[23%] lg:h-[320px] border-b-[2px] border-b-[white] hover:border-b-[#FF9100] mb-[36px] pb-6 lg:pb-0 lg:mb-0 box-shadow2">
             <div className="pt-[56px]">
               <Medal />
             </div>
@@ -100,7 +100,7 @@ const About = () => {
               <br /> Massa purus gravida.
             </div>
           </div>
-          <div className="w-[23%] h-[320px] hover:border-b-[2px] border-b-[#FF9100] box-shadow2">
+          <div className="w-[97%] lg:w-[23%] lg:h-[320px] border-b-[2px] border-b-[white] hover:border-b-[#FF9100] mb-[36px] pb-6 lg:pb-0 lg:mb-0 box-shadow2">
             <div className="pt-[56px]">
               <Call2 />
             </div>
@@ -119,7 +119,7 @@ const About = () => {
         </div>
       </div>
       <div className="bg-[#FBFBFF]">
-        <div className="container mx-auto h-[500px] py-[70px] mt-[133px] mb-[300px]">
+        <div className="container mx-auto h-[500px] py-[70px] mt-[133px] mb-[100px] lg:mb-[300px]">
           <div className="text-[#000] text-[42px] font-bold text-center pb-[64px]">
             Our Client
           </div>
@@ -132,9 +132,9 @@ const About = () => {
           </div>
           <div className="text-[#8A8FB9] text-[16px] font-bold text-center pb-[20px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis
-            ultrices quam vel dui sollicitudin <br /> aliquet id arcu. Nam vitae
+            ultrices quam vel dui sollicitudin <br className="hidden lg:block"/> aliquet id arcu. Nam vitae
             a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor
-            <br /> aliquam lacus volutpat praesent.
+            <br className="hidden lg:block"/> aliquam lacus volutpat praesent.
           </div>
           <Image src={Slide} className="mx-auto" />
         </div>

@@ -8,7 +8,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const About = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -23,10 +23,10 @@ const About = () => {
         </div>
       </div>
       <div
-        className={`${josefinSans.className} container mx-auto flex justify-between py-[120px]`}
+        className={`${josefinSans.className} container mx-auto lg:flex justify-between py-[120px] px-2 lg:px-0`}
       >
-        <div className="w-[48%]">
-          <div className="text-[#151875] text-[36px] font-bold ">
+        <div className="w-full lg:w-[48%]">
+          <div className="text-[#151875] text-[34px] font-bold ">
             Information About us
           </div>
           <div className="text-[#8A8FB9] text-[16px] font-semibold pt-[14px] pb-[70px]">
@@ -46,31 +46,31 @@ const About = () => {
             neque ultrices tristique amet erat vitae eget dolor los vitae
             lobortis quis bibendum quam.
           </div>
-          <div className="flex gap-x-[30px]">
-            <div className="w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal pt-[10px] px-[10px] border border-[#8A8FB9]">
+          <div className="lg:flex gap-x-[30px]">
+            <div className="w-full lg:w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal pt-[10px] px-[10px] border border-[#8A8FB9] mb-4 lg:mb-0">
               <input type="text" placeholder="Your Name*" />
             </div>
-            <div className="w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal pt-[10px] px-[10px] border border-[#8A8FB9]">
+            <div className="w-full lg:w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal pt-[10px] px-[10px] border border-[#8A8FB9]">
               <input type="text" placeholder="Write Your Email*" />
             </div>
           </div>
-          <div className="w-full h-[42px] text-[#8A8FB9] text-[15px] font-normal mt-[34px] pt-[10px] px-[10px] border border-[#8A8FB9]">
+          <div className="w-full h-[42px] text-[#8A8FB9] text-[15px] font-normal mt-4 lg:mt-[34px] pt-[10px] px-[10px] border border-[#8A8FB9]">
             <input type="text" placeholder="Subject*" />
           </div>
-          <div className="pt-[20px] w-full h-[205px] text-[#8A8FB9] text-[15px] font-normal px-[20px] border border-[#8A8FB9] mt-[44px] mb-[22px]">
+          <div className="pt-[20px] w-full h-[205px] text-[#8A8FB9] text-[15px] font-normal px-[15px] lg:px-[20px] border border-[#8A8FB9] mt-4 lg:mt-[44px] mb-[22px]">
             <input type="text" placeholder="Write Your Comment*" />
           </div>
-          <button className="w-[157px] h-[44px] rounded-[3px] bg-[#FB2E86] text-[#fff] text-[16px] font-normal">
+          <button className="w-[157px] h-[44px] rounded-[3px] bg-[#FB2E86] text-[#fff] text-[16px] font-normal mb-[48px] lg:mb-0">
             Send Mail
           </button>
         </div>
-        <div className="w-[48%]">
-          <div className=" pl-[77px] pb-[148px]">
-            <div className="text-[#151875] text-[36px] font-bold pb-[30px]">
+        <div className="w-full lg:w-[48%]">
+          <div className="lg:pl-[77px] pb-[48px] lg:pb-[148px]">
+            <div className="text-[#151875] text-center lg:text-start text-[36px] font-bold pb-[30px]">
               Contact Way
             </div>
-            <div className="flex gap-x-[37px]">
-              <div className="">
+            <div className="lg:flex gap-x-[37px]">
+              <div className="pb-[53px] lg:pb-0">
                 <div className="flex items-center gap-x-[15px] pb-[53px]">
                   <div className="w-[45px] h-[45px] rounded-full bg-[#5726DF]"></div>
                   <div className="text-[#8A8FB9] text-[16px] font-semibold">

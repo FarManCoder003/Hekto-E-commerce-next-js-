@@ -41,7 +41,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const BlogPage = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -55,15 +55,15 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2 lg:px-0">
         <div
-          className={`${josefinSans.className} flex gap-x-[56px] pt-[124px] pb-[72px]`}
+          className={`${josefinSans.className} lg:flex gap-x-[56px] pt-[124px] pb-[72px]`}
         >
           <div className="">
-            <div className="w-[870px]">
+            <div className="w-full lg:w-[870px]">
               <Image
                 src={BlogImage1}
-                className="w-full h-[453px] rounded-[6px]"
+                className="w-full lg:h-[453px] rounded-[6px]"
               />
               <div className="flex gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
@@ -99,7 +99,7 @@ const BlogPage = () => {
                 dolor sit amet, consectetur adipiscing elit. Velit dapibus est,
                 nunc,{" "}
               </div>
-              <div className="w-full h-[141px] pt-[30px] pl-[14px] text-[#969CB4] text-[18px] font-semibold italic bg-[#FAFAFB] border-l-[2px] border-[#FC45A0] leading-normal">
+              <div className="w-full lg:h-[141px] pt-[15px] lg:pt-[30px] pl-[10px] lg:pl-[14px] text-[#969CB4] text-[18px] font-semibold italic bg-[#FAFAFB] border-l-[2px] border-[#FC45A0] leading-normal">
                 “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Commodo dictum sapien, amet, consequat. Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit. Commodo dictum sapien, amet,
@@ -132,13 +132,13 @@ const BlogPage = () => {
                 dolor sit amet, consectetur adipiscing elit. Velit dapibus est,
                 nunc,
               </div>
-              <div className="flex items-center gap-x-[12px] pb-[43px]">
-                <div className="w-[210px]">
-                  <Image src={BlogPageImage1} />
+              <div className="flex flex-wrap justify-center lg:justify-normal items-center lg:gap-x-[12px] pb-[43px]">
+                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start">
+                  <Image src={BlogPageImage1} class="w-full"/>
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
                     Quam sed
                   </div>
-                  <div className="flex gap-x-[9px]">
+                  <div className="flex justify-center lg:justify-normal gap-x-[9px]">
                     <div className="text-[#232A69] text-[13px] font-normal pl-[13px]">
                       $32.00
                     </div>
@@ -154,12 +154,12 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-[210px]">
-                  <Image src={BlogPageImage2} />
+                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start mt-4 lg:mt-0">
+                  <Image src={BlogPageImage2} class="w-full"/>
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
                     A etiam
                   </div>
-                  <div className="flex gap-x-[9px]">
+                  <div className="flex justify-center lg:justify-normal gap-x-[9px]">
                     <div className="text-[#232A69] text-[13px] font-normal pl-[13px]">
                       $32.00
                     </div>
@@ -175,12 +175,12 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-[210px]">
-                  <Image src={BlogPageImage3} />
-                  <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
+                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start my-4 lg:my-0">
+                  <Image src={BlogPageImage3} class="w-full"/>
+                  <div className="text-[#000] text-[19px] font-normal justify-center lg:justify-normal pl-[23px] py-[15px]">
                     Tristique sed
                   </div>
-                  <div className="flex gap-x-[9px]">
+                  <div className="flex justify-center lg:justify-normal gap-x-[9px]">
                     <div className="text-[#232A69] text-[13px] font-normal pl-[13px]">
                       $32.00
                     </div>
@@ -196,12 +196,12 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-[210px]">
-                  <Image src={BlogPageImage4} />
-                  <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
+                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start mb-4 lg:mb-0">
+                  <Image src={BlogPageImage4} class="w-full" />
+                  <div className="text-[#000] text-[19px] font-normal justify-center lg:justify-normal pl-[23px] py-[15px]">
                     Mi nisi
                   </div>
-                  <div className="flex gap-x-[9px]">
+                  <div className="flex justify-center lg:justify-normal gap-x-[9px]">
                     <div className="text-[#232A69] text-[13px] font-normal pl-[13px]">
                       $32.00
                     </div>
@@ -251,17 +251,17 @@ const BlogPage = () => {
                   <Twitter />
                 </div>
               </div>
-              <div className="flex justify-between items-center w-full h-[45px] bg-[#F7F8FB] rounded-[2px] px-[23px] text-[#8A8FB9] text-[16px] font-medium mt-[32px] mb-[111px]">
+              <div className="flex justify-between items-center w-full h-[45px] bg-[#F7F8FB] rounded-[2px] px-[23px] text-[#8A8FB9] text-[16px] font-medium mt-[32px] mb-[48px] lg:mb-[111px]">
                 <div className="flex gap-x-[3px]">
                   <ArrowLeft />
                   <div className="">Previous Post</div>
                 </div>
                 <div className="flex gap-x-[3px]">
-                  <ArrowRight />
                   <div className="">Next Post</div>
+                  <ArrowRight />
                 </div>
               </div>
-              <div className="flex gap-x-[14px] w-[667px] h-[137px] p-[14px] box-shadow7">
+              <div className="flex gap-x-[14px] w-full lg:w-[667px] lg:h-[137px] p-[14px] box-shadow7">
                 <Image src={BlogPageBox1} />
                 <div className="pt-[22px]">
                   <div className="flex items-center gap-x-[32px]">
@@ -272,13 +272,13 @@ const BlogPage = () => {
                       Jan 09 2020
                     </div>
                   </div>
-                  <div className="text-[#A3A2B6] text-[12px] leading-[28px] font-normal">
+                  <div className="text-[#A3A2B6] text-[12px] lg:leading-[28px] font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    in vitae rutrum vulputate <br /> consectetur.
+                    in vitae rutrum vulputate <br className="hidden lg:block"/> consectetur.
                   </div>
                 </div>
               </div>
-              <div className="flex gap-x-[14px] w-[667px] h-[137px] p-[14px] box-shadow7 mt-[30px] mb-[135px]">
+              <div className="flex gap-x-[14px] w-full lg:w-[667px] lg:h-[137px] p-[14px] box-shadow7 mt-[30px] mb-[48px] lg:mb-[135px]">
                 <Image src={BlogPageBox2} />
                 <div className="pt-[22px]">
                   <div className="flex items-center gap-x-[32px]">
@@ -289,20 +289,20 @@ const BlogPage = () => {
                       Jan 09 2020
                     </div>
                   </div>
-                  <div className="text-[#A3A2B6] text-[12px] leading-[28px] font-normal">
+                  <div className="text-[#A3A2B6] text-[12px] lg:leading-[28px] font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    in vitae rutrum vulputate <br /> consectetur.
+                    in vitae rutrum vulputate <br className="hidden lg:block"/> consectetur.
                   </div>
                 </div>
               </div>
-              <div className="flex gap-x-[30px]">
-                <div className="flex items-center gap-x-[3px] w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal px-[10px] border border-[#8A8FB9]">
+              <div className="lg:flex gap-x-[30px]">
+                <div className="flex items-center gap-x-[3px] w-full lg:w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal px-[10px] border border-[#8A8FB9] mb-[24px] lg:mb-0">
                   <div className="">
                     <Person />
                   </div>
                   <input type="text" placeholder="Your Name*" />
                 </div>
-                <div className="flex items-center gap-x-[3px] w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal px-[10px] border border-[#8A8FB9]">
+                <div className="flex items-center gap-x-[3px] w-full lg:w-[420px] h-[42px] text-[#8A8FB9] text-[15px] font-normal px-[10px] border border-[#8A8FB9] mb-[24px] lg:mb-0">
                   <div className="">
                     <Mail2 />
                   </div>
@@ -323,7 +323,7 @@ const BlogPage = () => {
                 </div>
               </div>
               <div className="text-center">
-                <button className="w-[850px] h-[50px] text-[#fff] text-[17px] font-semibold rounded-[2px] bg-[#FB2E86] mt-[46px]">
+                <button className="w-full lg:w-[850px] h-[50px] text-[#fff] text-[17px] font-semibold rounded-[2px] bg-[#FB2E86] mt-[46px] mb-[48px] lg:mb-0">
                   Continue Shoppping
                 </button>
               </div>
@@ -331,28 +331,28 @@ const BlogPage = () => {
           </div>
           <div className="">
             <h5>Search</h5>
-            <div className="flex items-center justify-between w-[270px] h-[40px] leading-[38px] rounded-[2px] border border-[#BDBDD8] px-[10px] text-[#1518751A] text-[14px] font-normal mt-[15px] mb-[52px]">
+            <div className="flex items-center justify-between w-full lg:w-[270px] h-[40px] leading-[38px] rounded-[2px] border border-[#BDBDD8] px-[10px] text-[#1518751A] text-[14px] font-normal mt-[15px] mb-[52px]">
               <input type="text" placeholder="Search For Posts" className="" />
               <Search2 />
             </div>
             <h5>Categories</h5>
-            <div className="flex gap-x-[10px] mt-[25px]">
-              <div className="">
+            <div className="lg:flex gap-x-[10px] mt-[25px]">
+              <div className="flex justify-center lg:block">
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
                   Watches
                 </div>
-                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear my-[12px]">
+                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear lg:my-[12px]">
                   Laptops
                 </div>
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
                   Mobile
                 </div>
               </div>
-              <div className="">
+              <div className="flex justify-center lg:block">
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
                   Accessories
                 </div>
-                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear my-[12px]">
+                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear lg:my-[12px]">
                   Jewelries
                 </div>
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
@@ -519,8 +519,8 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
-      <div className="my-[83px]">
-        <Image src={company} className="w-[904px] h-[93px] mx-auto" />
+      <div className="my-[48px] lg:my-[83px]">
+        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
       </div>
     </>
   );

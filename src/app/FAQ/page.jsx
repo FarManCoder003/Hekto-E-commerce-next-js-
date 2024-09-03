@@ -7,7 +7,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const FAQ = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -21,9 +21,9 @@ const FAQ = () => {
           </div>
         </div>
       </div>
-      <div className={`${josefinSans.className} container mx-auto`}>
-        <div className="flex gap-x-[106px] pt-[134px]">
-          <div className="w-[47%]">
+      <div className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}>
+        <div className="lg:flex gap-x-[106px] pt-[134px]">
+          <div className="w-full lg:w-[47%]">
             <div className="text-[#1D3178] text-[36px] font-bold text-center pb-[64px]">
               General Information
             </div>
@@ -56,8 +56,8 @@ const FAQ = () => {
               sed tristique mollis vitae, consequat gravida sagittis.
             </div>
           </div>
-          <div className="w-[47%] h-[738px] px-[46px] py-[62px] bg-[#F8F8FD]">
-            <div className="text-[#1D3178] text-[24px] font-bold pb-[114px]">
+          <div className="w-full lg:w-[47%] lg:h-[738px] px-2 lg:px-[46px] py-5 lg:py-[62px] bg-[#F8F8FD] mt-[36px]">
+            <div className="text-[#1D3178] text-[24px] text-center lg:text-start font-bold pb-[48px] lg:pb-[114px]">
               Ask a Question
             </div>
             <input
@@ -83,8 +83,8 @@ const FAQ = () => {
           </div>
         </div>
       </div>
-      <div className="my-[83px]">
-        <Image src={company} className="w-[904px] h-[93px] mx-auto" />
+      <div className="my-[36px] lg:my-[83px]">
+        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
       </div>
     </>
   );

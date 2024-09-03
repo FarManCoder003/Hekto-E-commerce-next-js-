@@ -48,12 +48,21 @@ const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2500,
+    speed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 50,
+    autoplaySpeed: 2000,
+    responsive:[
+      {
+        breakpoint:640,
+        settings:{
+          slidesToShow:1,
+          slidesToScroll:1,
+        }
+      }
+    ],
     appendDots: (dots) => {
       const activeIndex = dots.findIndex((dot) =>
         dot.props.className.includes("slick-active")

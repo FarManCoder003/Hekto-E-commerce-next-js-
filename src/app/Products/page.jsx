@@ -8,7 +8,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const Products = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -22,10 +22,10 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2 lg:px-0">
         <ProductsAPI />
-        <div className="my-[83px]">
-          <Image src={company} className="w-[904px] h-[93px] mx-auto" />
+        <div className="my-[48px] lg:my-[83px]">
+          <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
         </div>
       </div>
     </>

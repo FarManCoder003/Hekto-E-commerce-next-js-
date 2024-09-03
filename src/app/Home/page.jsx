@@ -63,18 +63,22 @@ const Home = async () => {
     <>
       <div className="bg-[#F2F0FF]">
         <div className="container mx-auto">
-          <div className="flex">
+          <div className="lg:flex">
             <div className="">
-              <Image alt="" src={lightBulb} className="w-[200px] h-[300px]" />
+              <Image
+                alt=""
+                src={lightBulb}
+                className="hidden lg:block w-[200px] h-[300px]"
+              />
             </div>
-            <div className="mx-[35px]">
+            <div className="lg:mx-[35px] px-1 lg:px-0">
               <div
-                className={`${lato.className} text-[#FB2E86] text-[16px] font-bold lg:pt-[100px] xl:pt-[200px]`}
+                className={`${lato.className} text-[#FB2E86] text-[16px] font-bold pt-[100px] xl:pt-[200px]`}
               >
                 Best Furniture For Your Castle....
               </div>
               <div
-                className={`${josefinSans.className} text-[#000] text-[52px] font-bold py-[12px]`}
+                className={`${josefinSans.className} text-[#000] text-[28px] lg:text-[52px] font-bold py-[12px]`}
               >
                 New Furniture Collection Trends in 2020
               </div>
@@ -82,14 +86,14 @@ const Home = async () => {
                 className={`${lato.className} text-[#8A8FB9] text-[16px] font-bold pb-[24px]`}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna
-                in est adipiscing <br />
+                in est adipiscing <br className="hidden lg:block" />
                 in phasellus non in justo.
               </div>
-              <button className="w-[163px] h-[50px] text-[#EEEFFB] rounded-[2px] bg-[#FB2E86] mb-[136px]">
+              <button className="w-[163px] h-[50px] text-[#EEEFFB] rounded-[2px] bg-[#FB2E86] mb-[100px] lg:mb-[136px]">
                 Shop Now
               </button>
             </div>
-            <div className="">
+            <div className="hidden lg:block">
               <Image alt="" src={sofa} className="w-[750px] mt-[80px]" />
             </div>
           </div>
@@ -104,7 +108,7 @@ const Home = async () => {
         </div>
         <div className="pb-[64px]">
           <h2 className={`${lato.className} text-center`}>Latest Products</h2>
-          <div className="flex justify-center gap-[60px] pt-[19px] pb-[58px]">
+          <div className="flex flex-wrap justify-center gap-[45px] lg:gap-[60px] pt-[19px] pb-[58px]">
             <div
               className={`${lato.className} text-[#151875] hover:text-[#FB2E86] text-[18px] font-normal hover:underline underline-[#FB2E86] cursor-pointer`}
             >
@@ -127,14 +131,14 @@ const Home = async () => {
             </div>
           </div>
           <div className="">
-            <div className="flex flex-wrap justify-between">
+            <div className="flex flex-wrap justify-between px-3 lg:px-0">
               {displayedProducts.map((item, index) => (
                 <div
                   key={index}
-                  className="w-[30%] group overflow-hidden mb-[64px] cursor-pointer"
+                  className="w-[47%] lg:w-[30%] group overflow-hidden mb-[64px] cursor-pointer"
                 >
                   <Link href={`/ProductDetails/${item.id}`}>
-                    <div className="relative bg-[#F7F7F7] group-hover:bg-[#fff] w-full h-[270px] pt-[15px] pb-[8px] duration-300 ease-in">
+                    <div className="relative bg-[#F7F7F7] group-hover:bg-[#fff] w-full lg:h-[270px] pt-[15px] pb-[8px] duration-300 ease-in overflow-hidden">
                       <div className="absolute top-[25px] left-[-100px] group-hover:left-[18px] duration-300 ease-in-out">
                         <Image
                           alt=""
@@ -158,16 +162,16 @@ const Home = async () => {
                         src={item.thumbnail}
                         width="2000"
                         height="2000"
-                        className="mx-auto w-[260px] h-[250px]"
+                        className="mx-auto w-[260px] lg:h-[250px] "
                       />
                     </div>
-                    <div className="flex justify-between pt-[15px]">
+                    <div className="lg:flex lg:justify-between text-center lg:text-start pt-[15px] z-10">
                       <div
                         className={`${josefinSans.className} text-[#151875] text-[16px] font-normal`}
                       >
                         {item.title}
                       </div>
-                      <div className="flex gap-[10px] items-center">
+                      <div className="flex justify-center lg:justify-normal gap-[10px] items-center">
                         <div
                           className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
                         >
@@ -196,8 +200,8 @@ const Home = async () => {
           <h2 className={`${lato.className} text-center pb-[60px]`}>
             What Shopex Offer!
           </h2>
-          <div className="flex justify-between">
-            <div className="w-[23%] h-[320px] box-shadow2">
+          <div className="lg:flex justify-center lg:justify-between">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
               <div className="pt-[56px]">
                 <Truck />
               </div>
@@ -213,7 +217,7 @@ const Home = async () => {
                 <br /> Massa purus gravida.
               </div>
             </div>
-            <div className="w-[23%] h-[320px] box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
               <div className="pt-[56px]">
                 <Currency />
               </div>
@@ -229,7 +233,7 @@ const Home = async () => {
                 <br /> Massa purus gravida.
               </div>
             </div>
-            <div className="w-[23%] h-[320px] box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
               <div className="pt-[56px]">
                 <Medal />
               </div>
@@ -245,7 +249,7 @@ const Home = async () => {
                 <br /> Massa purus gravida.
               </div>
             </div>
-            <div className="w-[23%] h-[320px] box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
               <div className="pt-[56px]">
                 <Call2 />
               </div>
@@ -264,18 +268,18 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F1F0FF] ">
+      <div className="bg-[#F1F0FF]">
         <Image
           alt=""
           src={featureSofa}
-          className="w-[1050px] mx-auto my-[64px]"
+          className="w-[1050px] mx-auto mb-[64px] px-2 lg:px-0"
         />
       </div>
       <div className="container mx-auto">
         <div className="">
           <h2 className={`${lato.className} text-center`}>Trending products</h2>
-          <div className="flex justify-center gap-x-[30px] py-[45px]">
-            <div className="w-[270px] h-[350px] p-[12px] box-shadow2">
+          <div className="flex flex-wrap justify-between lg:justify-center lg:gap-x-[30px] gap-y-[15px] lg:gap-y-[0] py-[45px] px-2 lg:px-0">
+            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage1}></Image>
               </div>
@@ -297,7 +301,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="w-[270px] h-[350px] p-[12px] box-shadow2">
+            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage2}></Image>
               </div>
@@ -319,7 +323,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="w-[270px] h-[350px] p-[12px] box-shadow2">
+            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage3}></Image>
               </div>
@@ -341,7 +345,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="w-[270px] h-[350px] p-[12px] box-shadow2">
+            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage4}></Image>
               </div>
@@ -364,12 +368,12 @@ const Home = async () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center gap-x-[30px] pb-[128px]">
-            <div className="w-[420px] h-[270px] box-shadow2 cursor-pointer">
-              <Image alt="" src={trendingAd1} className="w-[420px]"></Image>
+          <div className="lg:flex justify-center gap-x-[30px] lg:pb-[128px]">
+            <div className="lg:w-[420px] lg:h-[270px] box-shadow2 cursor-pointer">
+              <Image alt="" src={trendingAd1} className="w-[420px]" />
             </div>
-            <div className="w-[420px] h-[270px] box-shadow2 cursor-pointer">
-              <Image alt="" src={trendingAd2}></Image>
+            <div className="lg:w-[420px] lg:h-[270px] box-shadow2 cursor-pointer my-5 lg:my-0">
+              <Image alt="" src={trendingAd2} />
             </div>
             <div className="cursor-pointer">
               <Image
@@ -392,7 +396,7 @@ const Home = async () => {
         </div>
         <div className="pb-[79px]">
           <h2 className={`${lato.className} text-center`}>Discount Item</h2>
-          <div className="flex justify-center gap-[60px] pt-[19px] pb-[58px]">
+          <div className="flex justify-between lg:justify-center lg:gap-[60px] pt-[19px] pb-[58px] px-2 lg:px-0">
             <div
               className={`${lato.className} text-[#151875] hover:text-[#FB2E86] text-[18px] font-normal hover:underline underline-[#FB2E86] cursor-pointer`}
             >
@@ -409,15 +413,15 @@ const Home = async () => {
               Sofa Collection
             </div>
           </div>
-          <div className="flex justify-center gap-x-[90px]">
-            <div className="pt-[110px]">
+          <div className="lg:flex justify-center lg:gap-x-[90px]">
+            <div className="px-2 lg:px-0 lg:pt-[110px]">
               <div
-                className={`${josefinSans.className} text-[#151875] text-[35px] font-bold`}
+                className={`${josefinSans.className} text-[#151875] text-[35px] font-bold text-center lg:text-start`}
               >
                 20% Discount Of All Products
               </div>
               <div
-                className={`${josefinSans.className} text-[#FB2E86] text-[21px] font-normal pt-[15px] pb-[21px]`}
+                className={`${josefinSans.className} text-[#FB2E86] text-[21px] font-normal pt-[15px] pb-[21px] text-center lg:text-start`}
               >
                 Eams Sofa Compact
               </div>
@@ -425,9 +429,9 @@ const Home = async () => {
                 className={`${lato.className} text-[#B7BACB] text-[17px] font-normal`}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget
-                <br /> feugiat habitasse nec, bibendum condimentum.
+                <br  className="hidden lg:block"/> feugiat habitasse nec, bibendum condimentum.
               </div>
-              <div className="flex justify-between mt-[28px]">
+              <div className="lg:flex justify-between mt-[28px]">
                 <div className="">
                   <div className="flex items-center gap-x-[6px]">
                     <div className="">
@@ -479,7 +483,7 @@ const Home = async () => {
                 Shop Now
               </button>
             </div>
-            <div className="">
+            <div className="hidden lg:block">
               <Image alt="" src={discountSofa}></Image>
             </div>
           </div>
@@ -488,9 +492,9 @@ const Home = async () => {
           <h2 className={`${lato.className} text-center pb-[56px]`}>
             Top Categories
           </h2>
-          <div className="flex justify-center gap-x-[39px]">
-            <div className="">
-              <div className="relative group overflow-hidden box-shadow2 w-[269px] h-[269px] rounded-full">
+          <div className="flex flex-wrap justify-between lg:justify-center lg:gap-x-[39px] px-2 lg:px-0 gap-y-3 lg:gap-y-0">
+            <div className="w-[47%]">
+              <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories1} />
                 <button
                   className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[21px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] border-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium border-none duration-300 ease-in-out`}
@@ -509,8 +513,8 @@ const Home = async () => {
                 $56.00
               </div>
             </div>
-            <div className="">
-              <div className="relative group overflow-hidden box-shadow2 w-[269px] h-[269px] rounded-full">
+            <div className="w-[47%]">
+              <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories2} />
                 <button
                   className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[21px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] border-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium border-none duration-300 ease-in-out`}
@@ -529,8 +533,8 @@ const Home = async () => {
                 $56.00
               </div>
             </div>
-            <div className="">
-              <div className="relative group overflow-hidden box-shadow2 w-[269px] h-[269px] rounded-full">
+            <div className="w-[47%]">
+              <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories3} />
                 <button
                   className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[21px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] border-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium border-none duration-300 ease-in-out`}
@@ -549,8 +553,8 @@ const Home = async () => {
                 $56.00
               </div>
             </div>
-            <div className="">
-              <div className="relative group overflow-hidden box-shadow2 w-[269px] h-[269px] rounded-full">
+            <div className="w-[47%]">
+              <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories1} />
                 <button
                   className={`${josefinSans.className} absolute bottom-[-50px] group-hover:bottom-[21px] left-[50%] translate-x-[-50%] w-[94px] h-[29px] border-[2px] bg-[#08D15F] text-[#fff] text-[12px] font-medium border-none duration-300 ease-in-out`}
@@ -570,22 +574,22 @@ const Home = async () => {
               </div>
             </div>
           </div>
-          <div className="mb-[124px]">
+          <div className="mt-[24px] lg:mt-0 mb-[64px] lg:mb-[124px]">
             <Slider2 />
           </div>
         </div>
       </div>
       <div className="relative">
-        <Image alt="" src={subBg} className="h-[462px] mx-auto"></Image>
-        <div className="absolute top-[174px] left-[50%] translate-x-[-50%] text-center">
+        <Image alt="" src={subBg} className="h-[120px] lg:h-[462px] mx-auto"/>
+        <div className="absolute top-2 lg:top-[174px] left-[50%] translate-x-[-50%] text-center">
           <div
-            className={`${josefinSans.className} text-[#151875] text-[35px] font-bold text-center pb-[28px]`}
+            className={`${josefinSans.className} text-[#151875] lg:text-[35px] font-bold text-center lg:pb-[28px]`}
           >
             Get Latest Update By Subscribing <br />
             0ur Newsletter
           </div>
           <button
-            className={`${josefinSans.classroom} w-[173px] h-[49px] bg-[#FB2E86] text-[#fff] text-[17px] font-normal`}
+            className={`${josefinSans.classroom} lg:w-[173px] lg:h-[49px] bg-[#FB2E86] text-[#fff] px-3 py-1 lg:py-0 lg:px-0 text-[9px] lg:text-[17px] font-normal`}
           >
             Shop Now
           </button>
@@ -595,11 +599,11 @@ const Home = async () => {
         <Image
           alt=""
           src={company}
-          className="w-[904px] h-[93px] mx-auto my-[96px]"
+          className="w-full lg:w-[904px] lg:h-[93px] mx-auto my-[48px] lg:my-[96px]"
         />
         <h2 className="text-center pb-[80px]">Latest Blog</h2>
-        <div className="flex justify-center gap-x-[56px] pb-[115px]">
-          <div className="w-[370px] h-[493px] rounded-[5px] box-shadow2 group">
+        <div className="lg:flex justify-center gap-x-[56px] pb-[64px] lg:pb-[115px] px-2 lg:px-0">
+          <div className="w-full lg:w-[370px] h-[493px] rounded-[5px] box-shadow2 group">
             <Image
               alt=""
               src={blog1}
@@ -646,7 +650,7 @@ const Home = async () => {
               </div>
             </div>
           </div>
-          <div className="w-[370px] h-[493px] rounded-[5px] box-shadow2 group">
+          <div className="w-full lg:w-[370px] h-[493px] rounded-[5px] box-shadow2 group">
             <Image
               alt=""
               src={blog2}
@@ -693,7 +697,7 @@ const Home = async () => {
               </div>
             </div>
           </div>
-          <div className="w-[370px] h-[493px] rounded-[5px] box-shadow2 group">
+          <div className="w-full lg:w-[370px] h-[493px] rounded-[5px] box-shadow2 group">
             <Image
               alt=""
               src={blog3}

@@ -30,7 +30,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-[15px]">
+        <div className="flex justify-center items-center gap-[15px] p-2 lg:p-0">
           <select className="bg-transparent text-[#F1F1F1]">
             <option
               value=""

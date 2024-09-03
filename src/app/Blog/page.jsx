@@ -28,7 +28,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const Blog = () => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className="container mx-auto">
           <div
             className={`${josefinSans.className} text-[#101750] text-[36px] font-bold`}
@@ -42,15 +42,15 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-2 lg:px-0">
         <div
-          className={`${josefinSans.className} flex gap-x-[56px] pt-[124px] pb-[72px]`}
+          className={`${josefinSans.className} lg:flex gap-x-[56px] pt-[124px] pb-[72px]`}
         >
           <div className="">
-            <div className="w-[870px]">
+            <div className="w-full lg:w-[870px]">
               <Image
                 src={BlogImage1}
-                className="w-full h-[453px] rounded-[6px]"
+                className="w-full lg:h-[453px] rounded-[6px]"
               />
               <div className="flex gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
@@ -85,10 +85,10 @@ const Blog = () => {
                 <div className="w-[5px] h-[5px] rounded-full bg-[#FB2E86]"></div>
               </div>
             </div>
-            <div className="w-[870px] py-[42px]">
+            <div className="w-full lg:w-[870px] my-[24px] lg:py-[42px]">
               <Image
                 src={BlogImage2}
-                className="w-full h-[453px] rounded-[6px]"
+                className="w-full lg:h-[453px] rounded-[6px]"
               />
               <div className="flex gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
@@ -123,10 +123,10 @@ const Blog = () => {
                 <div className="w-[5px] h-[5px] rounded-full bg-[#FB2E86]"></div>
               </div>
             </div>
-            <div className="w-[870px]">
+            <div className="w-full lg:w-[870px]">
               <Image
                 src={BlogImage3}
-                className="w-full h-[453px] rounded-[6px]"
+                className="w-full lg:h-[453px] rounded-[6px]"
               />
               <div className="flex gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
@@ -162,30 +162,30 @@ const Blog = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div className="mt-[48px] lg:mt-0">
             <h5>Search</h5>
-            <div className="flex items-center justify-between w-[270px] h-[40px] leading-[38px] rounded-[2px] border border-[#BDBDD8] px-[10px] text-[#1518751A] text-[14px] font-normal mt-[15px] mb-[52px]">
+            <div className="flex items-center justify-between lg:w-[270px] h-[40px] leading-[38px] rounded-[2px] border border-[#BDBDD8] px-[10px] text-[#1518751A] text-[14px] font-normal mt-[15px] mb-[52px]">
               <input type="text" placeholder="Search For Posts" className="" />
               <Search2 />
             </div>
             <h5>Categories</h5>
-            <div className="flex gap-x-[10px] mt-[25px]">
-              <div className="">
+            <div className="lg:flex lg:gap-x-[10px] mt-[25px]">
+              <div className="flex justify-center lg:block">
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
                   Watches
                 </div>
-                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear my-[12px]">
+                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear lg:my-[12px]">
                   Laptops
                 </div>
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
                   Mobile
                 </div>
               </div>
-              <div className="">
+              <div className="flex justify-center lg:block">
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
                   Accessories
                 </div>
-                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear my-[12px]">
+                <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear lg:my-[12px]">
                   Jewelries
                 </div>
                 <div className="w-[100px] h-[30px] text-center leading-[30px] rounded-[3px] text-[#3F509E] text-[14px] font-normal hover:bg-[#F939BF] hover:text-[#fff] duration-300 ease-linear">
@@ -368,8 +368,8 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="my-[83px]">
-        <Image src={company} className="w-[904px] h-[93px] mx-auto" />
+      <div className="my-[48px] lg:my-[83px]">
+        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
       </div>
     </>
   );
