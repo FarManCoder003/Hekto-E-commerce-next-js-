@@ -133,7 +133,7 @@ const BlogPage = () => {
                 nunc,
               </div>
               <div className="flex flex-wrap justify-center lg:justify-normal items-center lg:gap-x-[12px] pb-[43px]">
-                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start">
+                <div className="w-[90%] lg:w-[210px] text-center lg:text-start">
                   <Image src={BlogPageImage1} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
                     Quam sed
@@ -154,7 +154,7 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start mt-4 lg:mt-0">
+                <div className="w-[90%] lg:w-[210px] text-center lg:text-start mt-4 lg:mt-0">
                   <Image src={BlogPageImage2} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
                     A etiam
@@ -175,7 +175,7 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start my-4 lg:my-0">
+                <div className="w-[90%] lg:w-[210px] text-center lg:text-start my-4 lg:my-0">
                   <Image src={BlogPageImage3} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal justify-center lg:justify-normal pl-[23px] py-[15px]">
                     Tristique sed
