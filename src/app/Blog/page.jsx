@@ -52,7 +52,7 @@ const Blog = () => {
                 src={BlogImage1}
                 className="w-full lg:h-[453px] rounded-[6px]"
               />
-              <div className="flex gap-x-[27px] py-[28px]">
+              <div className="flex gap-x-[15px] lg:gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
                   <Pen />
                   <div className="w-[160px] h-[23px] leading-[23px] text-center bg-[#FFE7F9] rounded-[2px] text-[#151875] text-[14px] font-normal">
@@ -90,7 +90,7 @@ const Blog = () => {
                 src={BlogImage2}
                 className="w-full lg:h-[453px] rounded-[6px]"
               />
-              <div className="flex gap-x-[27px] py-[28px]">
+              <div className="flex gap-x-[15px] lg:gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
                   <Pen />
                   <div className="w-[160px] h-[23px] leading-[23px] text-center bg-[#FFE7F9] rounded-[2px] text-[#151875] text-[14px] font-normal">
@@ -128,7 +128,7 @@ const Blog = () => {
                 src={BlogImage3}
                 className="w-full lg:h-[453px] rounded-[6px]"
               />
-              <div className="flex gap-x-[27px] py-[28px]">
+              <div className="flex gap-x-[15px] lg:gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
                   <Pen />
                   <div className="w-[160px] h-[23px] leading-[23px] text-center bg-[#FFE7F9] rounded-[2px] text-[#151875] text-[14px] font-normal">
@@ -369,7 +369,10 @@ const Blog = () => {
         </div>
       </div>
       <div className="my-[48px] lg:my-[83px]">
-        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
+        <Image
+          src={company}
+          className="w-full lg:w-[904px] lg:h-[93px] mx-auto"
+        />
       </div>
     </>
   );

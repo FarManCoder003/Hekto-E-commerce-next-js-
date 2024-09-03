@@ -10,7 +10,9 @@ const NavbarItems = () => {
     <>
       <ul
         className={`lg:flex gap-[35px] text-[#0D0E43] text-[16px] font-normal text-center lg:text-start absolute lg:static duration-300 ease-in-out z-[9999999] ${
-          show == true ? "w-[100px] bg-[white] top-[80px] right-2 block" : "hidden top-[-100px] right-0"
+          show == true
+            ? "w-[100px] bg-[white] top-[80px] right-2 block"
+            : "hidden top-[-100px] right-0"
         }`}
       >
         <li className="hover:text-[#FB2E86]">

@@ -429,7 +429,8 @@ const Home = async () => {
                 className={`${lato.className} text-[#B7BACB] text-[17px] font-normal`}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget
-                <br  className="hidden lg:block"/> feugiat habitasse nec, bibendum condimentum.
+                <br className="hidden lg:block" /> feugiat habitasse nec,
+                bibendum condimentum.
               </div>
               <div className="lg:flex justify-between mt-[28px]">
                 <div className="">
@@ -493,7 +494,7 @@ const Home = async () => {
             Top Categories
           </h2>
           <div className="flex flex-wrap justify-between lg:justify-center lg:gap-x-[39px] px-2 lg:px-0 gap-y-3 lg:gap-y-0">
-            <div className="w-[47%]">
+            <div className="w-[47%] lg:w-[269px]">
               <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories1} />
                 <button
@@ -513,7 +514,7 @@ const Home = async () => {
                 $56.00
               </div>
             </div>
-            <div className="w-[47%]">
+            <div className="w-[47%] lg:w-[269px]">
               <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories2} />
                 <button
@@ -533,7 +534,7 @@ const Home = async () => {
                 $56.00
               </div>
             </div>
-            <div className="w-[47%]">
+            <div className="w-[47%] lg:w-[269px]">
               <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories3} />
                 <button
@@ -553,7 +554,7 @@ const Home = async () => {
                 $56.00
               </div>
             </div>
-            <div className="w-[47%]">
+            <div className="w-[47%] lg:w-[269px]">
               <div className="relative group overflow-hidden box-shadow2 lg:w-[269px] lg:h-[269px] rounded-full">
                 <Image alt="" src={topCategories1} />
                 <button
@@ -580,7 +581,7 @@ const Home = async () => {
         </div>
       </div>
       <div className="relative">
-        <Image alt="" src={subBg} className="h-[120px] lg:h-[462px] mx-auto"/>
+        <Image alt="" src={subBg} className="h-[120px] lg:h-[462px] mx-auto" />
         <div className="absolute top-2 lg:top-[174px] left-[50%] translate-x-[-50%] text-center">
           <div
             className={`${josefinSans.className} text-[#151875] lg:text-[35px] font-bold text-center lg:pb-[28px]`}

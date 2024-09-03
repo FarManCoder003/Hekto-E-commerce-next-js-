@@ -25,7 +25,10 @@ const Products = () => {
       <div className="container mx-auto px-2 lg:px-0">
         <ProductsAPI />
         <div className="my-[48px] lg:my-[83px]">
-          <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
+          <Image
+            src={company}
+            className="w-full lg:w-[904px] lg:h-[93px] mx-auto"
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import company from "@/assets/company.png";
-import Error  from "@/assets/Error.png";
+import Error from "@/assets/Error.png";
 import { Josefin_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +11,7 @@ export default function NotFound() {
     <>
       <div className="container mx-auto px-2 lg:px-0">
         <div className="text-center">
-            <Image src={Error} className="mx-auto my-[36px]"/>
+          <Image src={Error} className="mx-auto my-[36px]" />
           <div
             className={`${josefinSans.className} text-[#152970] text-[24px] font-bold text-center`}
           >
@@ -26,7 +26,10 @@ export default function NotFound() {
           </Link>
         </div>
         <div className="my-[48px] lg:my-[83px]">
-          <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
+          <Image
+            src={company}
+            className="w-full lg:w-[904px] lg:h-[93px] mx-auto"
+          />
         </div>
       </div>
     </>

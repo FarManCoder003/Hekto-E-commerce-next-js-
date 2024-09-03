@@ -23,14 +23,16 @@ const OrderComplete = () => {
           </div>
         </div>
       </div>
-      <div className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}>
+      <div
+        className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}
+      >
         <div className="relative my-[48px] lg:my-0 lg:mt-[81px] lg:mb-[230px]">
           <div className="absolute z-[-1] top-0 right-0 left-0 overflow-hidden">
             <Image src={OrderImage} className="mx-auto" />
           </div>
           <div className="z-[1] text-center pt-[36px] lg:pt-[112px]">
             <div className="text-[#101750] text-[24px] lg:text-[36px] font-bold pb-[36px] lg:pb-[28px]">
-              Your Order <br className="block lg:hidden"/> Is Completed!
+              Your Order <br className="block lg:hidden" /> Is Completed!
             </div>
             <div className="text-[#8D92A7] text-[16px] font-bold pb-[25px]">
               Thank you for your order! Your order is being processed and will
@@ -47,7 +49,10 @@ const OrderComplete = () => {
         </div>
       </div>
       <div className="my-[48px] lg:my-[83px]">
-        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
+        <Image
+          src={company}
+          className="w-full lg:w-[904px] lg:h-[93px] mx-auto"
+        />
       </div>
     </>
   );

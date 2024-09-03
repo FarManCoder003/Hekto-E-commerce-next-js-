@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="lg:flex items-center justify-between lg:h-[70px] px-1 lg:px-0 py-[16px] lg:py-0">
         <div className="flex px-[25px] lg:px-0 lg:gap-x-[200px] items-center justify-between">
           <Image src={logo} />
-          <NavbarItems/>
+          <NavbarItems />
         </div>
         <div className="flex justify-center mt-[24px] lg:mt-0">
           <NavSearch />

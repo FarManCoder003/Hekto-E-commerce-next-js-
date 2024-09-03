@@ -125,7 +125,9 @@ const ProductsAPI = () => {
         </div>
       </div>
       <div
-        className={` ${viewMode === "activeList" ? "lg:flex gap-x-[35px]" : ""}`}
+        className={` ${
+          viewMode === "activeList" ? "lg:flex gap-x-[35px]" : ""
+        }`}
       >
         {viewMode === "activeList" ? (
           <div className={`${lato.className}`}>
@@ -395,7 +397,9 @@ const ProductsAPI = () => {
                       <div className="max-w-[691px] text-[#9295AA] text-[9px] lg:text-[17px] font-normal">
                         {item.description}
                       </div>
-                      <div className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]">Add to cart</div>
+                      <div className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]">
+                        Add to cart
+                      </div>
                       <div className="hidden lg:flex items-center gap-x-[20px] mt-[30px]">
                         <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
                           <Cart />

@@ -65,7 +65,7 @@ const BlogPage = () => {
                 src={BlogImage1}
                 className="w-full lg:h-[453px] rounded-[6px]"
               />
-              <div className="flex gap-x-[27px] py-[28px]">
+              <div className="flex gap-x-[15px] lg:gap-x-[27px] py-[28px]">
                 <div className="flex items-center gap-x-[10px]">
                   <Pen />
                   <div className="w-[160px] h-[23px] leading-[23px] text-center bg-[#FFE7F9] rounded-[2px] text-[#151875] text-[14px] font-normal">
@@ -134,7 +134,7 @@ const BlogPage = () => {
               </div>
               <div className="flex flex-wrap justify-center lg:justify-normal items-center lg:gap-x-[12px] pb-[43px]">
                 <div className="!w-[90%] lg:w-[210px] text-center lg:text-start">
-                  <Image src={BlogPageImage1} class="w-full"/>
+                  <Image src={BlogPageImage1} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
                     Quam sed
                   </div>
@@ -155,7 +155,7 @@ const BlogPage = () => {
                   </div>
                 </div>
                 <div className="!w-[90%] lg:w-[210px] text-center lg:text-start mt-4 lg:mt-0">
-                  <Image src={BlogPageImage2} class="w-full"/>
+                  <Image src={BlogPageImage2} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
                     A etiam
                   </div>
@@ -176,7 +176,7 @@ const BlogPage = () => {
                   </div>
                 </div>
                 <div className="!w-[90%] lg:w-[210px] text-center lg:text-start my-4 lg:my-0">
-                  <Image src={BlogPageImage3} class="w-full"/>
+                  <Image src={BlogPageImage3} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal justify-center lg:justify-normal pl-[23px] py-[15px]">
                     Tristique sed
                   </div>
@@ -274,7 +274,8 @@ const BlogPage = () => {
                   </div>
                   <div className="text-[#A3A2B6] text-[12px] lg:leading-[28px] font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    in vitae rutrum vulputate <br className="hidden lg:block"/> consectetur.
+                    in vitae rutrum vulputate <br className="hidden lg:block" />{" "}
+                    consectetur.
                   </div>
                 </div>
               </div>
@@ -291,7 +292,8 @@ const BlogPage = () => {
                   </div>
                   <div className="text-[#A3A2B6] text-[12px] lg:leading-[28px] font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    in vitae rutrum vulputate <br className="hidden lg:block"/> consectetur.
+                    in vitae rutrum vulputate <br className="hidden lg:block" />{" "}
+                    consectetur.
                   </div>
                 </div>
               </div>
@@ -520,7 +522,10 @@ const BlogPage = () => {
         </div>
       </div>
       <div className="my-[48px] lg:my-[83px]">
-        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
+        <Image
+          src={company}
+          className="w-full lg:w-[904px] lg:h-[93px] mx-auto"
+        />
       </div>
     </>
   );

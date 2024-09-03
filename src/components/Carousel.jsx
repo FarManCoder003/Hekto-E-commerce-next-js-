@@ -54,14 +54,14 @@ const Carousel = () => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 2000,
-    responsive:[
+    responsive: [
       {
-        breakpoint:640,
-        settings:{
-          slidesToShow:1,
-          slidesToScroll:1,
-        }
-      }
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
     appendDots: (dots) => {
       const activeIndex = dots.findIndex((dot) =>

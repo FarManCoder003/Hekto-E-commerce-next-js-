@@ -132,9 +132,10 @@ const About = () => {
           </div>
           <div className="text-[#8A8FB9] text-[16px] font-bold text-center pb-[20px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis
-            ultrices quam vel dui sollicitudin <br className="hidden lg:block"/> aliquet id arcu. Nam vitae
-            a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor
-            <br className="hidden lg:block"/> aliquam lacus volutpat praesent.
+            ultrices quam vel dui sollicitudin{" "}
+            <br className="hidden lg:block" /> aliquet id arcu. Nam vitae a enim
+            nunc, sed sapien egestas ac nam. Tristique ultrices dolor
+            <br className="hidden lg:block" /> aliquam lacus volutpat praesent.
           </div>
           <Image src={Slide} className="mx-auto" />
         </div>

@@ -21,7 +21,9 @@ const FAQ = () => {
           </div>
         </div>
       </div>
-      <div className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}>
+      <div
+        className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}
+      >
         <div className="lg:flex gap-x-[106px] pt-[134px]">
           <div className="w-full lg:w-[47%]">
             <div className="text-[#1D3178] text-[36px] font-bold text-center pb-[64px]">
@@ -84,7 +86,10 @@ const FAQ = () => {
         </div>
       </div>
       <div className="my-[36px] lg:my-[83px]">
-        <Image src={company} className="w-full lg:w-[904px] lg:h-[93px] mx-auto" />
+        <Image
+          src={company}
+          className="w-full lg:w-[904px] lg:h-[93px] mx-auto"
+        />
       </div>
     </>
   );
