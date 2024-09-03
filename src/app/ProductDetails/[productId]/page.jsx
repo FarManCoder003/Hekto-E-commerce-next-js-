@@ -6,7 +6,7 @@ const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const Page = async ({ params: { productId } }) => {
   return (
     <>
-      <div className="bg-[#F6F5FF] h-[286px] pt-[96px]">
+      <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
         <div className={`${josefinSans.className} container mx-auto`}>
           <div className="text-[#101750] text-[36px] font-bold">
             Product Details
@@ -17,12 +17,14 @@ const Page = async ({ params: { productId } }) => {
           </div>
         </div>
       </div>
-      <div className={`${josefinSans.className} container mx-auto`}>
+      <div
+        className={`${josefinSans.className} container mx-auto px-2 lg:px-0`}
+      >
         <ProductDetails productId={productId} />
       </div>
-      <div className="bg-[#F9F8FE] h-[649px] py-[109px]">
+      <div className="bg-[#F9F8FE] lg:h-[649px] py-[36px] lg:py-[109px] px-2 lg:px-0">
         <div className={`${josefinSans.className} container mx-auto`}>
-          <div className="flex gap-x-[63px] pb-[61px]">
+          <div className="flex flex-wrap justify-center lg:justify-normal gap-x-[63px] pb-[61px]">
             <div className="text-[#151875] text-[24px] font-semibold hover:underline">
               Description
             </div>
@@ -52,32 +54,40 @@ const Page = async ({ params: { productId } }) => {
           <div className="text-[#151875] text-[22px] font-normal pb-[14px]">
             More details
           </div>
-          <div className="flex gap-x-[12px] group">
-            <Arrow />
+          <div className="flex justify-between lg:justify-normal gap-x-[6px]">
+            <div>
+              <Arrow />
+            </div>
             <div className="text-[#A9ACC6] text-[16px] font-semibold pb-[36px]">
               Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam
               arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate
               nunc nec. Dui, massa viverr .
             </div>
           </div>
-          <div className="flex gap-x-[12px] group">
-            <Arrow />
+          <div className="flex justify-between lg:justify-normal gap-x-[6px]">
+            <div>
+              <Arrow />
+            </div>
             <div className="text-[#A9ACC6] text-[16px] font-semibold pb-[36px]">
               Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam
               arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate
               nunc nec. Dui, massa viverr .
             </div>
           </div>
-          <div className="flex gap-x-[12px] group">
-            <Arrow />
+          <div className="flex justify-between lg:justify-normal gap-x-[6px]">
+            <div>
+              <Arrow />
+            </div>
             <div className="text-[#A9ACC6] text-[16px] font-semibold pb-[36px]">
               Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam
               arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate
               nunc nec. Dui, massa viverr .
             </div>
           </div>
-          <div className="flex gap-x-[12px] group">
-            <Arrow />
+          <div className="flex justify-between lg:justify-normal gap-x-[6px]">
+            <div>
+              <Arrow />
+            </div>
             <div className="text-[#A9ACC6] text-[16px] font-semibold pb-[36px]">
               Aliquam dis vulputate vulputate integer sagittis. Faucibus ds diam
               arcu, nulla lobortis justo netus dis. Eu in fringilla vulputate

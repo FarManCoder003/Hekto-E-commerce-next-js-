@@ -201,7 +201,7 @@ const Home = async () => {
             What Shopex Offer!
           </h2>
           <div className="lg:flex justify-center lg:justify-between">
-            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 lg:py-0 my-16 lg:my-0 box-shadow2">
               <div className="pt-[56px]">
                 <Truck />
               </div>
@@ -217,7 +217,7 @@ const Home = async () => {
                 <br /> Massa purus gravida.
               </div>
             </div>
-            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 lg:py-0 my-16 lg:my-0 box-shadow2">
               <div className="pt-[56px]">
                 <Currency />
               </div>
@@ -233,7 +233,7 @@ const Home = async () => {
                 <br /> Massa purus gravida.
               </div>
             </div>
-            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 lg:py-0 my-16 lg:my-0 box-shadow2">
               <div className="pt-[56px]">
                 <Medal />
               </div>
@@ -249,7 +249,7 @@ const Home = async () => {
                 <br /> Massa purus gravida.
               </div>
             </div>
-            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 my-16 box-shadow2">
+            <div className="w-[95%] lg:w-[23%] mx-auto lg:mx-0 lg:h-[320px] py-6 lg:py-0 my-16 lg:my-0 box-shadow2">
               <div className="pt-[56px]">
                 <Call2 />
               </div>
@@ -279,7 +279,7 @@ const Home = async () => {
         <div className="">
           <h2 className={`${lato.className} text-center`}>Trending products</h2>
           <div className="flex flex-wrap justify-between lg:justify-center lg:gap-x-[30px] gap-y-[15px] lg:gap-y-[0] py-[45px] px-2 lg:px-0">
-            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
+            <div className="w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage1}></Image>
               </div>
@@ -301,7 +301,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
+            <div className="w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage2}></Image>
               </div>
@@ -323,7 +323,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
+            <div className="w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage3}></Image>
               </div>
@@ -345,7 +345,7 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-            <div className="!w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
+            <div className="w-[47%] lg:w-[270px] lg:h-[350px] p-[12px] box-shadow2">
               <div className="">
                 <Image alt="" src={trendingImage4}></Image>
               </div>

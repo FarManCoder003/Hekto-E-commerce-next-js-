@@ -52,9 +52,9 @@ const ProductDetails = ({ productId }) => {
   if (error) return <></>;
 
   return (
-    <div className="w-full h-[470px] p-[25px] rounded-[2px] box-shadow5 my-[121px]">
-      <div className="flex">
-        <div className="">
+    <div className="w-full lg:h-[470px] p-[25px] rounded-[2px] box-shadow5 my-[48px] lg:my-[121px]">
+      <div className="lg:flex">
+        <div className="flex flex-wrap justify-between lg:block">
           {item.images.map((image, index) => (
             <Image
               key={index}
@@ -62,17 +62,17 @@ const ProductDetails = ({ productId }) => {
               alt={`${item.title} image ${index + 1}`}
               width={177}
               height={1}
-              className="w-[182px] bg-[#F6F7FB] mb-[25px]"
+              className="w-[32%] lg:w-[182px] bg-[#F6F7FB] mb-[25px]"
             />
           ))}
         </div>
-        <div className="w-[375px] h-[410px] pt-[100px]  bg-[#F6F7FB] ml-[25px] mr-[41px]">
+        <div className="lg:w-[375px] lg:h-[410px] lg:pt-[100px]  bg-[#F6F7FB] lg:ml-[25px] lg:mr-[41px]">
           <Image
             src={item.thumbnail}
             alt={item.title}
             width={375}
-            height={375}
-            className="w-[375px]"
+            height={5}
+            className="w-[100%] lg:w-[375px]"
           />
         </div>
         <div className="">
