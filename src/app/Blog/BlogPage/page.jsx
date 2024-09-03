@@ -132,7 +132,7 @@ const BlogPage = () => {
                 dolor sit amet, consectetur adipiscing elit. Velit dapibus est,
                 nunc,
               </div>
-              <div className="flex flex-wrap justify-center lg:justify-normal items-center lg:gap-x-[12px] pb-[43px]">
+              <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-normal items-center lg:gap-x-[12px] pb-[43px]">
                 <div className="w-[90%] lg:w-[210px] text-center lg:text-start">
                   <Image src={BlogPageImage1} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal pl-[23px] py-[15px]">
