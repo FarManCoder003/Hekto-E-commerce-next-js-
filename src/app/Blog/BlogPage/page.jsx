@@ -196,7 +196,7 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="!w-[90%] lg:w-[210px] text-center lg:text-start mb-4 lg:mb-0">
+                <div className="w-[90%] lg:w-[210px] text-center lg:text-start mb-4 lg:mb-0">
                   <Image src={BlogPageImage4} class="w-full" />
                   <div className="text-[#000] text-[19px] font-normal justify-center lg:justify-normal pl-[23px] py-[15px]">
                     Mi nisi
