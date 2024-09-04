@@ -1,43 +1,57 @@
-"use client";
 import { createSlice } from "@reduxjs/toolkit";
 
+const getInitialStateFromLocalStorage = () => {
+  if (typeof window !== "undefined") {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  }
+  return [];
+};
+const initialState = {
+  cartItem: getInitialStateFromLocalStorage(),
+};
 export const productSlice = createSlice({
   name: "product",
-  initialState: {
-    cartItem: localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [],
-  },
+  initialState,
   reducers: {
     addToCart: (state, action) => {
-      let findProduct = state.cartItem.findIndex(
-        (item) => item.id == action.payload.id
+      const findProduct = state.cartItem.findIndex(
+        (item) => item.id === action.payload.id
       );
       if (findProduct !== -1) {
         state.cartItem[findProduct].qun += 1;
-        localStorage.setItem("cart", JSON.stringify(state.cartItem));
       } else {
         state.cartItem = [...state.cartItem, action.payload];
+      }
+      if (typeof window !== "undefined") {
         localStorage.setItem("cart", JSON.stringify(state.cartItem));
       }
     },
     productIncrement: (state, action) => {
       state.cartItem[action.payload].qun += 1;
-      localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      if (typeof window !== "undefined") {
+        localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      }
     },
     productDecrement: (state, action) => {
       if (state.cartItem[action.payload].qun > 1) {
         state.cartItem[action.payload].qun -= 1;
-        localStorage.setItem("cart", JSON.stringify(state.cartItem));
+        if (typeof window !== "undefined") {
+          localStorage.setItem("cart", JSON.stringify(state.cartItem));
+        }
       }
     },
     removeProduct: (state, action) => {
       state.cartItem.splice(action.payload, 1);
-      localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      if (typeof window !== "undefined") {
+        localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      }
     },
-    removeAll: (state, action) => {
+    removeAll: (state) => {
       state.cartItem = [];
-      localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      if (typeof window !== "undefined") {
+        localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      }
     },
   },
 });
