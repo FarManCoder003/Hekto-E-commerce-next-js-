@@ -1,13 +1,42 @@
-import chair1 from "@/assets/chair 1.png";
+"use client";
 import company from "@/assets/company.png";
 import { Cut } from "@/assets/svg/Cut";
+import ProductTotal from "@/components/ProductTotal";
 import { Josefin_Sans } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
+const fetchProducts = async () => {
+  try {
+    const res = await fetch("https://dummyjson.com/products");
+    if (!res.ok) throw new Error("Network response was not ok");
+    const data = await res.json();
+    return data.products || [];
+  } catch (error) {
+    console.error("Fetching error:", error);
+    return [];
+  }
+};
+
 const Checkout = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.product.cartItem);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      const productData = await fetchProducts();
+      setProducts(productData);
+    };
+    loadProducts();
+  }, []);
+  let handleRemove = (index) => {
+    dispatch(removeProduct(index));
+  };
   return (
     <>
       <div className="bg-[#F6F5FF] h-[286px] pt-[96px] px-2 lg:px-0">
@@ -103,39 +132,68 @@ const Checkout = () => {
             </div>
           </div>
           <div className="mt-[94px]">
-            <div className="flex justify-between items-center pb-[15px] mb-[15px] border-b border-b-[#E1E1E4]">
-              <div className="w-full lg:w-[265px]">
-                <div className="flex gap-x-[17px]">
-                  <div className="relative w-[83px] h-[87px] bg-[#C4C4C4] rounded-[3px]">
-                    <Image src={chair1} alt="item.title" />
-                    <div className="absolute w-[12px] h-[12px] top-[-6px] right-[-6px]">
-                      <Cut />
+            {data.length === 0 ? (
+              <div className="text-[#15245E] text-[14px] font-bold text-center">
+                Your cart is empty.
+              </div>
+            ) : (
+              data.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between items-center pb-[15px] mb-[15px] border-b border-b-[#E1E1E4]"
+                >
+                  <div className="w-full lg:w-[265px]">
+                    <div className="flex gap-x-[17px]">
+                      <div className="relative w-[83px] h-[87px] bg-[#C4C4C4] rounded-[3px]">
+                        <Image
+                          src={item.thumbnail}
+                          alt={item.title}
+                          width="500"
+                          height="500"
+                          className="w-full"
+                        />
+                        <div
+                          className="absolute w-[12px] h-[12px] top-[-6px] right-[-6px]"
+                          onClick={() => handleRemove(index)}
+                        >
+                          <Cut />
+                        </div>
+                      </div>
+                      <div className="">
+                        <div className="text-[#000] text-[14px] font-medium pt-[10px]">
+                          {item.title}
+                        </div>
+                        <div className="text-[#A1A8C1] text-[12px] font-normal pt-[7px]">
+                          Brand:
+                          {item.brand === 0 ? (
+                            <span className="">{item.brand}</span>
+                          ) : (
+                            <span className="">Unknown</span>
+                          )}
+                        </div>
+                        <div className="text-[#A1A8C1] text-[12px] font-normal">
+                          {item.stock === 0 ? (
+                            <div className="">Stock: {item.stock}</div>
+                          ) : (
+                            <div className="">{item.availabilityStatus}</div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="">
-                    <div className="text-[#000] text-[14px] font-medium pt-[10px]">
-                      item.title
-                    </div>
-                    <div className="text-[#A1A8C1] text-[12px] font-normal pt-[7px]">
-                      Brand: item.brand
-                    </div>
-                    <div className="text-[#A1A8C1] text-[12px] font-normal">
-                      Stock: 0{/*  item.availabilityStatus */}
-                    </div>
+                  <div className="text-[#15245E] text-[14px] font-semibold">
+                    ${item.price}
                   </div>
                 </div>
-              </div>
-              <div className="text-[#15245E] text-[14px] font-semibold">
-                $32.00
-              </div>
-            </div>
+              ))
+            )}
             <div className="w-full lg:w-[371px] h-[284px] rounded-[3px] bg-[#F4F4FC] p-[30px] pt-[36px] mt-[42px]">
               <div className="flex justify-between items-center mb-[34px] pb-[13px] border-b-[2px] border-b-[#E8E6F1]">
                 <div className="text-[#1D3178] text-[18px] font-semibold">
                   Subtotals:
                 </div>
                 <div className="text-[#15245E] text-[16px] font-normal">
-                  £219.00
+                  £<ProductTotal />
                 </div>
               </div>
               <div className="flex justify-between items-center mb-[17px] pb-[13px] border-b-[2px] border-b-[#E8E6F1]">
@@ -143,7 +201,7 @@ const Checkout = () => {
                   Total:
                 </div>
                 <div className="text-[#15245E] text-[16px] font-normal">
-                  £219.00
+                  £<ProductTotal />
                 </div>
               </div>
               <div className="text-[#8A91AB] text-[12px] text-start font-normal pb-[30px]">

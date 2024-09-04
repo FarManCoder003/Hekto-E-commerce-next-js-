@@ -9,7 +9,6 @@ import sofa from "@/assets/sofa main.png";
 import subBg from "@/assets/subscribe.png";
 import { Calender } from "@/assets/svg/Calender";
 import { Call2 } from "@/assets/svg/Call2";
-import { Cart } from "@/assets/svg/Cart";
 import { Check } from "@/assets/svg/Check";
 import { Currency } from "@/assets/svg/Currency";
 import { Heart } from "@/assets/svg/Heart";
@@ -32,6 +31,7 @@ import trendingProduct2 from "@/assets/trending product 2.png";
 import trendingProduct3 from "@/assets/trending product 3.png";
 import featureSofa from "@/assets/unique feature sofa.png";
 import Carousel from "@/components/Carousel";
+import HomeCart from "@/components/HomeCart";
 import { Josefin_Sans, Lato } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -137,26 +137,20 @@ const Home = async () => {
                   key={index}
                   className="w-[47%] lg:w-[30%] group overflow-hidden mb-[64px] cursor-pointer"
                 >
-                  <Link href={`/ProductDetails/${item.id}`}>
-                    <div className="relative bg-[#F7F7F7] group-hover:bg-[#fff] w-full lg:h-[270px] pt-[15px] pb-[8px] duration-300 ease-in overflow-hidden">
-                      <div className="absolute top-[25px] left-[-100px] group-hover:left-[18px] duration-300 ease-in-out">
-                        <Image
-                          alt=""
-                          src={sale}
-                          className="w-[84px] h-[56px]"
-                        />
+                  <div className="relative bg-[#F7F7F7] group-hover:bg-[#fff] w-full lg:h-[270px] pt-[15px] pb-[8px] duration-300 ease-in overflow-hidden">
+                    <div className="absolute top-[25px] left-[-100px] group-hover:left-[18px] duration-300 ease-in-out">
+                      <Image alt="" src={sale} className="w-[84px] h-[56px]" />
+                    </div>
+                    <div className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out">
+                      <HomeCart />
+                      <div className="py-[15px]">
+                        <Heart />
                       </div>
-                      <div className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out">
-                        <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#EEEFFB]">
-                          <Cart />
-                        </div>
-                        <div className="py-[15px]">
-                          <Heart />
-                        </div>
-                        <div className="">
-                          <SearchPlus />
-                        </div>
+                      <div className="">
+                        <SearchPlus />
                       </div>
+                    </div>
+                    <Link href={`/ProductDetails/${item.id}`}>
                       <Image
                         alt={item.title}
                         src={item.thumbnail}
@@ -164,7 +158,9 @@ const Home = async () => {
                         height="2000"
                         className="mx-auto w-[260px] lg:h-[250px] "
                       />
-                    </div>
+                    </Link>
+                  </div>
+                  <Link href={`/ProductDetails/${item.id}`}>
                     <div className="lg:flex lg:justify-between text-center lg:text-start pt-[15px] z-10">
                       <div
                         className={`${josefinSans.className} text-[#151875] text-[16px] font-normal`}

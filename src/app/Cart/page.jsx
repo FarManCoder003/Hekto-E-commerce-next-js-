@@ -1,7 +1,6 @@
-import chair1 from "@/assets/chair 1.png";
-import { Cut } from "@/assets/svg/Cut";
+import AddToCart from "@/components/AddToCart";
+import ProductTotal from "@/components/ProductTotal";
 import { Josefin_Sans } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
@@ -27,10 +26,10 @@ const Cart = () => {
         <div className="lg:flex justify-center gap-x-[81px] py-[131px]">
           <div className="lg:w-[718px]">
             <div className="flex justify-between lg:justify-normal">
-              <div className="text-[#1D3178] text-[20px] font-bold pb-[48px] pr-[80px] lg:pr-[226px]">
+              <div className="text-[#1D3178] text-[20px] font-bold pb-[48px] pr-[80px] lg:pr-[186px]">
                 Product
               </div>
-              <div className="text-[#1D3178] text-[20px] font-bold pb-[82px] lg:pr-[104px]">
+              <div className="text-[#1D3178] text-[20px] font-bold pb-[82px] lg:pr-[144px]">
                 Price
               </div>
               <div className="text-[#1D3178] text-[20px] font-bold pb-[82px] lg:pr-[122px]">
@@ -40,60 +39,7 @@ const Cart = () => {
                 Total
               </div>
             </div>
-            <div className="flex items-center justify-between lg:justify-normal pb-[15px] mb-[15px] border-b border-b-[#E1E1E4]">
-              <div className="w-[195px] lg:w-[265px] lg:mr-[36px]">
-                <div className="flex items-center gap-x-[17px]">
-                  <div className="relative w-[50px] h-[50px] lg:w-[83px] lg:h-[87px] bg-[#C4C4C4] rounded-[3px]">
-                    <Image src={chair1} alt="item.title" />
-                    <div className="absolute w-[12px] h-[12px] top-[-6px] right-[-6px]">
-                      <Cut />
-                    </div>
-                  </div>
-                  <div className="">
-                    <div className="w-full text-[#000] text-[14px] font-medium lg:pt-[10px]">
-                      item.title
-                    </div>
-                    <div className="text-[#A1A8C1] text-[12px] font-normal pt-[7px]">
-                      Brand: item.brand
-                    </div>
-                    <div className="text-[#A1A8C1] text-[12px] font-normal">
-                      Stock: 0{/*  item.availabilityStatus */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <div className="text-[#15245E] text-[14px] font-semibold">
-                  $32.00
-                </div>
-              </div>
-              <div className="ml-[64px] lg:ml-[122px] lg:mr-[140px]">
-                <div className="w-[51px] h-[20px] flex justify-between bg-[#F0EFF2]">
-                  <div className="w-[12px] h-[20px] bg-[#E7E7EF] text-[#BEBFC2] text-[12px] text-center cursor-pointer">
-                    -
-                  </div>
-                  <div className="text-[#BEBFC2] text-[12px] font-normal">
-                    1
-                  </div>
-                  <div className="w-[12px] h-[20px] bg-[#E7E7EF] text-[#BEBFC2] text-[12px] text-center cursor-pointer">
-                    +
-                  </div>
-                </div>
-              </div>
-              <div className="hidden lg:block mt-[34px]">
-                <div className="text-[#15245E] text-[14px] font-semibold">
-                  £219.00
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between">
-              <button className="w-[134px] h-[39px] bg-[#FB2E86] rounded-[2px] text-[#fff] text-[16px] font-semibold mt-[30px]">
-                Update Cart
-              </button>
-              <button className="w-[134px] h-[39px] bg-[#FB2E86] rounded-[2px] text-[#fff] text-[16px] font-semibold mt-[30px]">
-                Clear Cart
-              </button>
-            </div>
+            <AddToCart />
           </div>
           <div className="text-center mx-auto mt-[64px] lg:mt-0">
             <div className="text-[#1D3178] text-[20px] font-bold pb-[42px]">
@@ -105,7 +51,7 @@ const Cart = () => {
                   Subtotals:
                 </div>
                 <div className="text-[#15245E] text-[16px] font-normal">
-                  £219.00
+                  £<ProductTotal />
                 </div>
               </div>
               <div className="flex justify-between items-center mb-[17px] pb-[13px] border-b-[2px] border-b-[#E8E6F1]">
@@ -113,7 +59,7 @@ const Cart = () => {
                   Total:
                 </div>
                 <div className="text-[#15245E] text-[16px] font-normal">
-                  £219.00
+                  £<ProductTotal />
                 </div>
               </div>
               <div className="text-[#8A91AB] text-[12px] text-start font-normal pb-[30px]">

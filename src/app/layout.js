@@ -1,22 +1,25 @@
+"use client";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import store from "@/store";
+import { Provider } from "react-redux";
 import "./globals.css";
-
-export const metadata = {
-  title: "Hekto E-commerce",
-  description: "Created using next js",
-};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <Provider store={store}>
+      <html lang="en">
+        <head>
+          <title>Hekto E-commerce</title>
+        </head>
+        <body>
+          <Header />
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </Provider>
   );
 }

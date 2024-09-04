@@ -14,10 +14,14 @@ import { SearchPlus } from "@/assets/svg/SearchPlus";
 import { Sky } from "@/assets/svg/Sky";
 import { Star } from "@/assets/svg/Star";
 import { TransparentStar } from "@/assets/svg/TransparentStar";
+import { addToCart } from "@/components/ProductSlice";
 import { Josefin_Sans, Lato } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700"] });
@@ -39,6 +43,11 @@ const fetchProducts = async () => {
 const ProductsAPI = () => {
   const [products, setProducts] = useState([]);
   const [viewMode, setViewMode] = useState("");
+  let dispatch = useDispatch();
+  let handleCart = (item) => {
+    toast("Added to cart");
+    dispatch(addToCart({ ...item, qun: 1 }));
+  };
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -357,10 +366,10 @@ const ProductsAPI = () => {
           {products.map((item, index) => (
             <>
               {viewMode == "activeList" ? (
-                <Link href={`/ProductDetails/${item.id}`}>
-                  <div
-                    className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
-                  >
+                <div
+                  className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
+                >
+                  <Link href={`/ProductDetails/${item.id}`}>
                     <Image
                       alt={item.title}
                       src={item.thumbnail}
@@ -368,7 +377,9 @@ const ProductsAPI = () => {
                       height={250}
                       className="w-[100px] h-[100px] lg:w-[250px] lg:h-[250px] bg-[#F6F7FB]"
                     />
-                    <div className="items-center">
+                  </Link>
+                  <div className="items-center">
+                    <Link href={`/ProductDetails/${item.id}`}>
                       <div className="flex items-center gap-x-[8px] lg:gap-x-[18px]">
                         <div className="text-[#111C85] text-[16px] lg:text-[19px] font-bold">
                           {item.title}
@@ -397,38 +408,47 @@ const ProductsAPI = () => {
                       <div className="max-w-[691px] text-[#9295AA] text-[9px] lg:text-[17px] font-normal">
                         {item.description}
                       </div>
-                      <div className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]">
-                        Add to cart
+                    </Link>
+                    <div
+                      className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]"
+                      onClick={() => handleCart(item)}
+                    >
+                      Add to cart
+                    </div>
+                    <div
+                      className="hidden lg:flex items-center gap-x-[20px] mt-[30px]"
+                      onClick={() => handleCart(item)}
+                    >
+                      <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                        <Cart />
                       </div>
-                      <div className="hidden lg:flex items-center gap-x-[20px] mt-[30px]">
-                        <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
-                          <Cart />
-                        </div>
-                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
-                          <SearchPlus />
-                        </div>
-                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
-                          <Heart />
-                        </div>
+                      <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                        <SearchPlus />
+                      </div>
+                      <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                        <Heart />
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               ) : (
-                <Link href={`/ProductDetails/${item.id}`}>
-                  <div key={index} className="w-[270px] group cursor-pointer">
-                    <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
-                      <div className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out">
-                        <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#fff]">
-                          <Cart />
-                        </div>
-                        <div className="py-[15px]">
-                          <SearchPlus />
-                        </div>
-                        <div>
-                          <Heart />
-                        </div>
+                <div key={index} className="w-[270px] group cursor-pointer">
+                  <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
+                    <div
+                      className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out"
+                      onClick={() => handleCart(item)}
+                    >
+                      <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#fff]">
+                        <Cart />
                       </div>
+                      <div className="py-[15px]">
+                        <SearchPlus />
+                      </div>
+                      <div>
+                        <Heart />
+                      </div>
+                    </div>
+                    <Link href={`/ProductDetails/${item.id}`}>
                       <Image
                         alt={item.title}
                         src={item.thumbnail}
@@ -436,7 +456,9 @@ const ProductsAPI = () => {
                         height={178}
                         className="w-[178px] h-[178px] mx-auto"
                       />
-                    </div>
+                    </Link>
+                  </div>
+                  <Link href={`/ProductDetails/${item.id}`}>
                     <div className="text-center">
                       <div
                         className={`${josefinSans.className} text-[#151875] text-[18px] font-bold pt-[18px]`}
@@ -465,13 +487,25 @@ const ProductsAPI = () => {
                         )}
                       </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               )}
             </>
           ))}
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={800}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };

@@ -1,10 +1,10 @@
 import { Call } from "@/assets/svg/Call";
 import { Login } from "@/assets/svg/Login";
 import { Mail } from "@/assets/svg/Mail";
-import { NavCart } from "@/assets/svg/NavCart";
 import { Wishlist } from "@/assets/svg/Wishlist";
 import { Josefin_Sans } from "next/font/google";
 import Link from "next/link";
+import HeaderCart from "./HeaderCart";
 
 const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -100,9 +100,7 @@ const Header = () => {
             </div>
           </div>
           <div className="">
-            <Link href="/Cart">
-              <NavCart />
-            </Link>
+            <HeaderCart />
           </div>
         </div>
       </div>
