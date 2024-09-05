@@ -4,6 +4,10 @@ import { Star } from "@/assets/svg/Star";
 import { TransparentStar } from "@/assets/svg/TransparentStar";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "slick-carousel/slick/slick.css";
 
 const fetchProducts = async (productId) => {
   try {
