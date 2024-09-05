@@ -31,7 +31,12 @@ const ProductDetails = ({ productId }) => {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  let dispatch = useDispatch();
+  let handleCart = (item) => {
+    toast("Added to cart");
+    dispatch(addToCart({ ...item, qun: 1 }));
+  };
+  
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -98,7 +103,7 @@ const ProductDetails = ({ productId }) => {
           <div className="text-[#A9ACC6] text-[16px] font-semibold mt-[14px] mb-[34px]">
             {item.description}
           </div>
-          <button className="flex items-center gap-x-[26px] text-[#151875] text-[16px] font-normal">
+          <button className="flex items-center gap-x-[26px] text-[#151875] text-[16px] font-normal" onClick={() => handleCart(item)}>
             Add to cart <Heart />
           </button>
           {item.category && (
