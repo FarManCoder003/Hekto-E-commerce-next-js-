@@ -375,7 +375,7 @@ const ProductsAPI = () => {
                       src={item.thumbnail}
                       width={250}
                       height={250}
-                      className="w-[150px] h-[100px] lg:w-[250px] lg:h-[250px] bg-[#F6F7FB]"
+                      className="w-[150px] h-[100px] lg:w-[100%] lg:h-[100%] bg-[#F6F7FB]"
                     />
                   </Link>
                   <div className="w-[100%]">
