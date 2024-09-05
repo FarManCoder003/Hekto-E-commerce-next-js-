@@ -70,7 +70,7 @@ const AddToCart = () => {
                     width="500"
                     height="500"
                     alt={item.title}
-                    className="w-[50px] h-[50px] lg:w-[83px] lg:h-[87px]"
+                    className="w-[100%] h-[100%] lg:w-[83px] lg:h-[87px]"
                   />
                   <div
                     className="absolute w-[12px] h-[12px] top-[-6px] right-[-6px] cursor-pointer"
