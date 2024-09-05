@@ -127,6 +127,18 @@ const ProductDetails = ({ productId }) => {
           )}
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={800}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
