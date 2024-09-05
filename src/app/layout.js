@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import store from "@/store";
 import { Provider } from "react-redux";
 import "./globals.css";
+import firebaseConfig from "./firebase.config.js";
 
 export default function RootLayout({ children }) {
   return (

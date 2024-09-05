@@ -2,6 +2,7 @@
 import { Heart } from "@/assets/svg/Heart";
 import { Star } from "@/assets/svg/Star";
 import { TransparentStar } from "@/assets/svg/TransparentStar";
+import { addToCart } from "@/components/ProductSlice";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -40,7 +41,7 @@ const ProductDetails = ({ productId }) => {
     toast("Added to cart");
     dispatch(addToCart({ ...item, qun: 1 }));
   };
-  
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -107,7 +108,10 @@ const ProductDetails = ({ productId }) => {
           <div className="text-[#A9ACC6] text-[16px] font-semibold mt-[14px] mb-[34px]">
             {item.description}
           </div>
-          <button className="flex items-center gap-x-[26px] text-[#151875] text-[16px] font-normal" onClick={() => handleCart(item)}>
+          <button
+            className="flex items-center gap-x-[26px] text-[#151875] text-[16px] font-normal"
+            onClick={() => handleCart(item)}
+          >
             Add to cart <Heart />
           </button>
           {item.category && (

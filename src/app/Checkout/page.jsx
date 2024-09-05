@@ -160,7 +160,7 @@ const Checkout = () => {
                         </div>
                       </div>
                       <div className="">
-                        <div className="text-[#000] text-[14px] font-medium pt-[10px]">
+                        <div className="w-[150px] text-[#000] text-[14px] font-medium pt-[10px]">
                           {item.title}
                         </div>
                         <div className="text-[#A1A8C1] text-[12px] font-normal pt-[7px]">

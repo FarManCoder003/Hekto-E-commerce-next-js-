@@ -375,25 +375,25 @@ const ProductsAPI = () => {
                       src={item.thumbnail}
                       width={250}
                       height={250}
-                      className="w-[100px] h-[100px] lg:w-[250px] lg:h-[250px] bg-[#F6F7FB]"
+                      className="w-[150px] h-[100px] lg:w-[250px] lg:h-[250px] bg-[#F6F7FB]"
                     />
                   </Link>
-                  <div className="items-center">
+                  <div className="w-[100%]">
                     <Link href={`/ProductDetails/${item.id}`}>
                       <div className="flex items-center gap-x-[8px] lg:gap-x-[18px]">
-                        <div className="text-[#111C85] text-[16px] lg:text-[19px] font-bold">
+                        <div className="text-[#111C85] text-[14px] lg:text-[19px] font-bold">
                           {item.title}
                         </div>
-                        <div className="">
+                        <div className="hidden lg:block">
                           <CircleColor />
                         </div>
                       </div>
                       <div className="flex items-center gap-x-[10px] my-[5px] lg:my-[15px]">
-                        <div className="text-[#151875] text-[14px] font-normal">
+                        <div className="text-[#151875] text-[12px] font-normal">
                           ${item.price}
                         </div>
                         {item.discountPercentage > 0 && (
-                          <div className="text-[#FB2E86] text-[14px] font-normal line-through">
+                          <div className="text-[#FB2E86] text-[12px] font-normal line-through">
                             $
                             {(
                               (item.price / (100 - item.discountPercentage)) *
