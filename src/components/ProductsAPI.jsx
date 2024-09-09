@@ -390,74 +390,143 @@ const ProductsAPI = () => {
           }`}
         >
           {viewMode == "activeList"
-            ? filteredProducts.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
-                >
-                  <Link href={`/ProductDetails/${item.id}`}>
-                    <Image
-                      alt={item.title}
-                      src={item.thumbnail}
-                      width={250}
-                      height={250}
-                      className="w-[150px] h-[100px] lg:w-[100%] lg:h-[100%] bg-[#F6F7FB]"
-                    />
-                  </Link>
-                  <div className="w-[100%]">
+            ? selectedCategory || selectedBrand
+              ? filteredProducts.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
+                  >
                     <Link href={`/ProductDetails/${item.id}`}>
-                      <div className="flex items-center gap-x-[8px] lg:gap-x-[18px]">
-                        <div className="text-[#111C85] text-[14px] lg:text-[19px] font-bold">
-                          {item.title}
-                        </div>
-                        <div className="hidden lg:block">
-                          <CircleColor />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-x-[10px] my-[5px] lg:my-[15px]">
-                        <div className="text-[#151875] text-[12px] font-normal">
-                          ${item.price}
-                        </div>
-                        {item.discountPercentage > 0 && (
-                          <div className="text-[#FB2E86] text-[12px] font-normal line-through">
-                            $
-                            {(
-                              (item.price / (100 - item.discountPercentage)) *
-                              100
-                            ).toFixed(2)}
-                          </div>
-                        )}
-                        <div className="flex gap-x-[3px]">
-                          {renderRating(item.rating)}
-                        </div>
-                      </div>
-                      <div className="max-w-[691px] text-[#9295AA] text-[9px] lg:text-[17px] font-normal">
-                        {item.description}
-                      </div>
+                      <Image
+                        alt={item.title}
+                        src={item.thumbnail}
+                        width={250}
+                        height={250}
+                        className="w-[150px] h-[100px] lg:w-[100%] lg:h-[100%] bg-[#F6F7FB]"
+                      />
                     </Link>
-                    <div
-                      className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]"
-                      onClick={() => handleCart(item)}
-                    >
-                      Add to cart
-                    </div>
-                    <div
-                      className="hidden lg:flex items-center gap-x-[20px] mt-[30px]"
-                      onClick={() => handleCart(item)}
-                    >
-                      <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
-                        <Cart />
+                    <div className="w-[100%]">
+                      <Link href={`/ProductDetails/${item.id}`}>
+                        <div className="flex items-center gap-x-[8px] lg:gap-x-[18px]">
+                          <div className="text-[#111C85] text-[14px] lg:text-[19px] font-bold">
+                            {item.title}
+                          </div>
+                          <div className="hidden lg:block">
+                            <CircleColor />
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-x-[10px] my-[5px] lg:my-[15px]">
+                          <div className="text-[#151875] text-[12px] font-normal">
+                            ${item.price}
+                          </div>
+                          {item.discountPercentage > 0 && (
+                            <div className="text-[#FB2E86] text-[12px] font-normal line-through">
+                              $
+                              {(
+                                (item.price / (100 - item.discountPercentage)) *
+                                100
+                              ).toFixed(2)}
+                            </div>
+                          )}
+                          <div className="flex gap-x-[3px]">
+                            {renderRating(item.rating)}
+                          </div>
+                        </div>
+                        <div className="max-w-[691px] text-[#9295AA] text-[9px] lg:text-[17px] font-normal">
+                          {item.description}
+                        </div>
+                      </Link>
+                      <div
+                        className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]"
+                        onClick={() => handleCart(item)}
+                      >
+                        Add to cart
                       </div>
-                      <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
-                        <SearchPlus />
-                      </div>
-                      <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
-                        <Heart />
+                      <div
+                        className="hidden lg:flex items-center gap-x-[20px] mt-[30px]"
+                        onClick={() => handleCart(item)}
+                      >
+                        <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                          <Cart />
+                        </div>
+                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                          <SearchPlus />
+                        </div>
+                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                          <Heart />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))
+                ))
+              : filteredProducts.slice(0, 6).map((item, index) => (
+                  <div
+                    key={index}
+                    className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
+                  >
+                    <Link href={`/ProductDetails/${item.id}`}>
+                      <Image
+                        alt={item.title}
+                        src={item.thumbnail}
+                        width={250}
+                        height={250}
+                        className="w-[150px] h-[100px] lg:w-[100%] lg:h-[100%] bg-[#F6F7FB]"
+                      />
+                    </Link>
+                    <div className="w-[100%]">
+                      <Link href={`/ProductDetails/${item.id}`}>
+                        <div className="flex items-center gap-x-[8px] lg:gap-x-[18px]">
+                          <div className="text-[#111C85] text-[14px] lg:text-[19px] font-bold">
+                            {item.title}
+                          </div>
+                          <div className="hidden lg:block">
+                            <CircleColor />
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-x-[10px] my-[5px] lg:my-[15px]">
+                          <div className="text-[#151875] text-[12px] font-normal">
+                            ${item.price}
+                          </div>
+                          {item.discountPercentage > 0 && (
+                            <div className="text-[#FB2E86] text-[12px] font-normal line-through">
+                              $
+                              {(
+                                (item.price / (100 - item.discountPercentage)) *
+                                100
+                              ).toFixed(2)}
+                            </div>
+                          )}
+                          <div className="flex gap-x-[3px]">
+                            {renderRating(item.rating)}
+                          </div>
+                        </div>
+                        <div className="max-w-[691px] text-[#9295AA] text-[9px] lg:text-[17px] font-normal">
+                          {item.description}
+                        </div>
+                      </Link>
+                      <div
+                        className="lg:hidden text-[#151875] text-[14px] font-normal mt-[12px]"
+                        onClick={() => handleCart(item)}
+                      >
+                        Add to cart
+                      </div>
+                      <div
+                        className="hidden lg:flex items-center gap-x-[20px] mt-[30px]"
+                        onClick={() => handleCart(item)}
+                      >
+                        <div className="lg:w-[35px] lg:h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                          <Cart />
+                        </div>
+                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                          <SearchPlus />
+                        </div>
+                        <div className="w-[35px] h-[35px] rounded-full pt-[10px] bg-[#fff] box-shadow4">
+                          <Heart />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
             : products.slice(0, 12).map((item, index) => (
                 <div key={index} className="w-[270px] group cursor-pointer">
                   <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
