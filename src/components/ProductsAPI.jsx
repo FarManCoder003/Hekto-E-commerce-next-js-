@@ -19,6 +19,7 @@ import { Josefin_Sans, Lato } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -44,7 +45,13 @@ const ProductsAPI = () => {
   const [products, setProducts] = useState([]);
   const [viewMode, setViewMode] = useState("");
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [brands, setBrands] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState(null);
+  let [categoryShow, setCategoryShow] = useState(false);
+  let [ratingShow, setRatingShow] = useState(false);
+  let [brandShow, setBrandShow] = useState(false);
+  let [discountShow, setDiscountShow] = useState(false);
 
   let dispatch = useDispatch();
   let handleCart = (item) => {
@@ -64,6 +71,8 @@ const ProductsAPI = () => {
       ...new Set(products.map((product) => product.category)),
     ];
     setCategories(uniqueCategories);
+    const uniqueBrands = [...new Set(products.map((product) => product.brand))];
+    setBrands(uniqueBrands);
   }, [products]);
 
   const handleViewChange = (mode) => {
@@ -83,13 +92,21 @@ const ProductsAPI = () => {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === selectedCategory ? null : category);
   };
-  const filteredProducts = selectedCategory
-    ? products.filter((product) => product.category === selectedCategory)
-    : products;
+  const handleBrandClick = (brand) => {
+    setSelectedBrand(brand === selectedBrand ? null : brand);
+  };
+
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory = selectedCategory
+      ? product.category === selectedCategory
+      : true;
+    const matchesBrand = selectedBrand ? product.brand === selectedBrand : true;
+    return matchesCategory && matchesBrand;
+  });
 
   return (
     <>
-      <div className="lg:flex justify-between py-[124px]">
+      <div className="lg:flex justify-between py-[64px]">
         <div>
           <div
             className={`${josefinSans.className} text-[#151875] text-[20px] font-light`}
@@ -156,120 +173,144 @@ const ProductsAPI = () => {
         {viewMode === "activeList" ? (
           <div className={`${lato.className}`}>
             <div className="pt-[40px]">
-              <h3 className="pb-[7px]">Product Brand</h3>
-              <label className="box">
-                <h4>Coaster Furniture</h4>
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-              <label className="box">
-                <h4>Fusion Dot High Fashion</h4>
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-              <label className="box">
-                <h4>Unique Furniture Restore</h4>
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-              <label className="box">
-                <h4>Dream Furniture Flipping</h4>
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-              <label className="box">
-                <h4>Young Repurposed</h4>
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
-              <label className="box">
-                <h4>Green DIY furniture</h4>
-                <input type="checkbox" />
-                <span className="checkmark"></span>
-              </label>
+              <h3
+                className="pb-[7px] flex items-center justify-between cursor-pointer"
+                onClick={() => setBrandShow(!brandShow)}
+              >
+                Product Brand
+                <span className="inline-block">
+                  {brandShow == true ? <FaAngleUp /> : <FaAngleDown />}
+                </span>
+              </h3>
+              {brandShow &&
+                brands.map((brand) => (
+                  <label key={brand} className="box">
+                    <h4
+                      className="capitalize"
+                      onClick={() => handleBrandClick(brand)}
+                    >
+                      {brand}
+                    </h4>
+                    <input type="checkbox" checked={selectedBrand === brand} />
+                    <span className="checkmark"></span>
+                  </label>
+                ))}
             </div>
             <div className="py-[44px]">
-              <h3 className="pb-[7px]">Discount Offer</h3>
-              <label className="box">
-                <h4>20% Cashback</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>5% Cashback Offer</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>25% Cashback Offer</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
+              <h3
+                className="pb-[7px] flex items-center justify-between cursor-pointer"
+                onClick={() => setDiscountShow(!discountShow)}
+              >
+                Discount Offer
+                <span className="inline-block">
+                  {discountShow == true ? <FaAngleUp /> : <FaAngleDown />}
+                </span>
+              </h3>
+              {discountShow && (
+                <>
+                  <label className="box">
+                    <h4>20% Cashback</h4>
+                    <input type="checkbox" />
+                    <span className="checkmark2"></span>
+                  </label>
+                  <label className="box">
+                    <h4>5% Cashback Offer</h4>
+                    <input type="checkbox" />
+                    <span className="checkmark2"></span>
+                  </label>
+                  <label className="box">
+                    <h4>25% Cashback Offer</h4>
+                    <input type="checkbox" />
+                    <span className="checkmark2"></span>
+                  </label>
+                </>
+              )}
             </div>
             <div className="">
-              <h3 className="pb-[7px]">Rating Item</h3>
-              <label className="box">
-                <div className="flex pt-[6px] gap-x-[2px]">
-                  <Star />
-                  <Star />
-                  <Star />
-                  <Star />
-                  <TransparentStar />
-                </div>
-                <input type="checkbox" />
-                <span className="checkmark3"></span>
-              </label>
-              <label className="box">
-                <div className="flex pt-[6px] gap-x-[2px]">
-                  <Star />
-                  <Star />
-                  <Star />
-                  <TransparentStar />
-                  <TransparentStar />
-                </div>
-                <input type="checkbox" />
-                <span className="checkmark3"></span>
-              </label>
-              <label className="box">
-                <div className="flex pt-[6px] gap-x-[2px]">
-                  <Star />
-                  <Star />
-                  <TransparentStar />
-                  <TransparentStar />
-                  <TransparentStar />
-                </div>
-                <input type="checkbox" />
-                <span className="checkmark3"></span>
-              </label>
-              <label className="box">
-                <div className="flex pt-[6px] gap-x-[2px]">
-                  <Star />
-                  <TransparentStar />
-                  <TransparentStar />
-                  <TransparentStar />
-                  <TransparentStar />
-                </div>
-                <input type="checkbox" />
-                <span className="checkmark3"></span>
-              </label>
+              <h3
+                className="pb-[7px] flex items-center justify-between cursor-pointer"
+                onClick={() => setRatingShow(!ratingShow)}
+              >
+                Rating Item
+                <span className="inline-block">
+                  {ratingShow == true ? <FaAngleUp /> : <FaAngleDown />}
+                </span>
+              </h3>
+              {ratingShow && (
+                <>
+                  <label className="box">
+                    <div className="flex pt-[6px] gap-x-[2px]">
+                      <Star />
+                      <Star />
+                      <Star />
+                      <Star />
+                      <TransparentStar />
+                    </div>
+                    <input type="checkbox" />
+                    <span className="checkmark3"></span>
+                  </label>
+                  <label className="box">
+                    <div className="flex pt-[6px] gap-x-[2px]">
+                      <Star />
+                      <Star />
+                      <Star />
+                      <TransparentStar />
+                      <TransparentStar />
+                    </div>
+                    <input type="checkbox" />
+                    <span className="checkmark3"></span>
+                  </label>
+                  <label className="box">
+                    <div className="flex pt-[6px] gap-x-[2px]">
+                      <Star />
+                      <Star />
+                      <TransparentStar />
+                      <TransparentStar />
+                      <TransparentStar />
+                    </div>
+                    <input type="checkbox" />
+                    <span className="checkmark3"></span>
+                  </label>
+                  <label className="box">
+                    <div className="flex pt-[6px] gap-x-[2px]">
+                      <Star />
+                      <TransparentStar />
+                      <TransparentStar />
+                      <TransparentStar />
+                      <TransparentStar />
+                    </div>
+                    <input type="checkbox" />
+                    <span className="checkmark3"></span>
+                  </label>
+                </>
+              )}
             </div>
             <div className="py-[44px]">
-              <h3 className="pb-[7px]">Categories</h3>
-              {categories.map((category) => (
-                <label key={category} className="box">
-                  <h4
-                    className="capitalize"
-                    onClick={() => handleCategoryClick(category)}
-                  >
-                    {category}
-                  </h4>
-                  <input
-                    type="checkbox"
-                    checked={selectedCategory === category}
-                  />
-                  <span className="checkmark2"></span>
-                </label>
-              ))}
+              <h3
+                className="pb-[7px] flex items-center justify-between cursor-pointer"
+                onClick={() => setCategoryShow(!categoryShow)}
+              >
+                Categories
+                <span className="inline-block">
+                  {categoryShow == true ? <FaAngleUp /> : <FaAngleDown />}
+                </span>
+              </h3>
+              {categoryShow &&
+                categories.map((category) => (
+                  <label key={category} className="box">
+                    <h4
+                      className="capitalize"
+                      onClick={() => handleCategoryClick(category)}
+                    >
+                      {category}
+                    </h4>
+                    <input
+                      type="checkbox"
+                      checked={selectedCategory === category}
+                    />
+                    <span className="checkmark2"></span>
+                  </label>
+                ))}
             </div>
             <div className="">
               <h3 className="pb-[7px]">Price Filter</h3>
@@ -348,9 +389,8 @@ const ProductsAPI = () => {
               : "flex flex-wrap justify-center lg:gap-x-[53px] gap-y-[81px]"
           }`}
         >
-          {viewMode == "activeList" ? (
-            filteredProducts.length > 0 ? (
-              filteredProducts.map((item, index) => (
+          {viewMode == "activeList"
+            ? filteredProducts.map((item, index) => (
                 <div
                   key={index}
                   className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
@@ -418,70 +458,65 @@ const ProductsAPI = () => {
                   </div>
                 </div>
               ))
-            ) : (
-              <h4>No products found in this category.</h4>
-            )
-          ) : (
-            products.map((item, index) => (
-              <div key={index} className="w-[270px] group cursor-pointer">
-                <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
-                  <div
-                    className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out"
-                    onClick={() => handleCart(item)}
-                  >
-                    <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#fff]">
-                      <Cart />
+            : products.slice(0, 12).map((item, index) => (
+                <div key={index} className="w-[270px] group cursor-pointer">
+                  <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
+                    <div
+                      className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out"
+                      onClick={() => handleCart(item)}
+                    >
+                      <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#fff]">
+                        <Cart />
+                      </div>
+                      <div className="py-[15px]">
+                        <SearchPlus />
+                      </div>
+                      <div>
+                        <Heart />
+                      </div>
                     </div>
-                    <div className="py-[15px]">
-                      <SearchPlus />
-                    </div>
-                    <div>
-                      <Heart />
-                    </div>
+                    <Link href={`/ProductDetails/${item.id}`}>
+                      <Image
+                        alt={item.title}
+                        src={item.thumbnail}
+                        width={178}
+                        height={178}
+                        className="w-[178px] h-[178px] mx-auto"
+                      />
+                    </Link>
                   </div>
                   <Link href={`/ProductDetails/${item.id}`}>
-                    <Image
-                      alt={item.title}
-                      src={item.thumbnail}
-                      width={178}
-                      height={178}
-                      className="w-[178px] h-[178px] mx-auto"
-                    />
+                    <div className="text-center">
+                      <div
+                        className={`${josefinSans.className} text-[#151875] text-[18px] font-bold pt-[18px]`}
+                      >
+                        {item.title}
+                      </div>
+                      <div className="mt-[8px] mb-[15px]">
+                        <CircleColor />
+                      </div>
+                      <div className="flex justify-center items-center gap-x-[10px]">
+                        <div
+                          className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
+                        >
+                          ${item.price}
+                        </div>
+                        {item.discountPercentage > 0 && (
+                          <div
+                            className={`${josefinSans.className} text-[#FB2E86] text-[14px] font-normal line-through`}
+                          >
+                            $
+                            {(
+                              (item.price / (100 - item.discountPercentage)) *
+                              100
+                            ).toFixed(2)}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </Link>
                 </div>
-                <Link href={`/ProductDetails/${item.id}`}>
-                  <div className="text-center">
-                    <div
-                      className={`${josefinSans.className} text-[#151875] text-[18px] font-bold pt-[18px]`}
-                    >
-                      {item.title}
-                    </div>
-                    <div className="mt-[8px] mb-[15px]">
-                      <CircleColor />
-                    </div>
-                    <div className="flex justify-center items-center gap-x-[10px]">
-                      <div
-                        className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
-                      >
-                        ${item.price}
-                      </div>
-                      {item.discountPercentage > 0 && (
-                        <div
-                          className={`${josefinSans.className} text-[#FB2E86] text-[14px] font-normal line-through`}
-                        >
-                          $
-                          {(
-                            (item.price / (100 - item.discountPercentage)) *
-                            100
-                          ).toFixed(2)}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))
-          )}
+              ))}
         </div>
       </div>
       <ToastContainer
