@@ -43,6 +43,9 @@ const fetchProducts = async () => {
 const ProductsAPI = () => {
   const [products, setProducts] = useState([]);
   const [viewMode, setViewMode] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   let dispatch = useDispatch();
   let handleCart = (item) => {
     toast("Added to cart");
@@ -52,10 +55,16 @@ const ProductsAPI = () => {
   useEffect(() => {
     const loadProducts = async () => {
       const productData = await fetchProducts();
-      setProducts(productData.slice(0, 12));
+      setProducts(productData);
     };
     loadProducts();
   }, []);
+  useEffect(() => {
+    const uniqueCategories = [
+      ...new Set(products.map((product) => product.category)),
+    ];
+    setCategories(uniqueCategories);
+  }, [products]);
 
   const handleViewChange = (mode) => {
     setViewMode(mode);
@@ -71,6 +80,12 @@ const ProductsAPI = () => {
       );
     });
   };
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category === selectedCategory ? null : category);
+  };
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
 
   return (
     <>
@@ -240,51 +255,21 @@ const ProductsAPI = () => {
             </div>
             <div className="py-[44px]">
               <h3 className="pb-[7px]">Categories</h3>
-              <label className="box">
-                <h4>Presto shop</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>Magenta</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>Big commerce</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>osCommerce</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>3d cart</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>Bags</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>Accessories</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>Jewelry</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
-              <label className="box">
-                <h4>Watches</h4>
-                <input type="checkbox" />
-                <span className="checkmark2"></span>
-              </label>
+              {categories.map((category) => (
+                <label key={category} className="box">
+                  <h4
+                    className="capitalize"
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {category}
+                  </h4>
+                  <input
+                    type="checkbox"
+                    checked={selectedCategory === category}
+                  />
+                  <span className="checkmark2"></span>
+                </label>
+              ))}
             </div>
             <div className="">
               <h3 className="pb-[7px]">Price Filter</h3>
@@ -363,10 +348,11 @@ const ProductsAPI = () => {
               : "flex flex-wrap justify-center lg:gap-x-[53px] gap-y-[81px]"
           }`}
         >
-          {products.map((item, index) => (
-            <>
-              {viewMode == "activeList" ? (
+          {viewMode == "activeList" ? (
+            filteredProducts.length > 0 ? (
+              filteredProducts.map((item, index) => (
                 <div
+                  key={index}
                   className={`${josefinSans.className} flex items-center gap-x-[15px] lg:gap-x-[32px] my-[15px] lg:my-[34px] lg:pl-[20px] py-[10px] lg:py-[20px] box-shadow3 cursor-pointer`}
                 >
                   <Link href={`/ProductDetails/${item.id}`}>
@@ -431,67 +417,71 @@ const ProductsAPI = () => {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <div key={index} className="w-[270px] group cursor-pointer">
-                  <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
-                    <div
-                      className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out"
-                      onClick={() => handleCart(item)}
-                    >
-                      <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#fff]">
-                        <Cart />
-                      </div>
-                      <div className="py-[15px]">
-                        <SearchPlus />
-                      </div>
-                      <div>
-                        <Heart />
-                      </div>
+              ))
+            ) : (
+              <h4>No products found in this category.</h4>
+            )
+          ) : (
+            products.map((item, index) => (
+              <div key={index} className="w-[270px] group cursor-pointer">
+                <div className="bg-[#F6F7FB] group-hover:bg-[#EBF4F3] w-[100%] h-[280px] pt-[46px] rounded-[3px] relative overflow-hidden duration-300 ease-in-out cursor-pointer">
+                  <div
+                    className="absolute bottom-[-200px] group-hover:bottom-[15px] left-[15px] duration-300 ease-in-out"
+                    onClick={() => handleCart(item)}
+                  >
+                    <div className="w-[30px] h-[30px] rounded-full pt-[9px] bg-[#fff]">
+                      <Cart />
                     </div>
-                    <Link href={`/ProductDetails/${item.id}`}>
-                      <Image
-                        alt={item.title}
-                        src={item.thumbnail}
-                        width={178}
-                        height={178}
-                        className="w-[178px] h-[178px] mx-auto"
-                      />
-                    </Link>
+                    <div className="py-[15px]">
+                      <SearchPlus />
+                    </div>
+                    <div>
+                      <Heart />
+                    </div>
                   </div>
                   <Link href={`/ProductDetails/${item.id}`}>
-                    <div className="text-center">
-                      <div
-                        className={`${josefinSans.className} text-[#151875] text-[18px] font-bold pt-[18px]`}
-                      >
-                        {item.title}
-                      </div>
-                      <div className="mt-[8px] mb-[15px]">
-                        <CircleColor />
-                      </div>
-                      <div className="flex justify-center items-center gap-x-[10px]">
-                        <div
-                          className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
-                        >
-                          ${item.price}
-                        </div>
-                        {item.discountPercentage > 0 && (
-                          <div
-                            className={`${josefinSans.className} text-[#FB2E86] text-[14px] font-normal line-through`}
-                          >
-                            $
-                            {(
-                              (item.price / (100 - item.discountPercentage)) *
-                              100
-                            ).toFixed(2)}
-                          </div>
-                        )}
-                      </div>
-                    </div>
+                    <Image
+                      alt={item.title}
+                      src={item.thumbnail}
+                      width={178}
+                      height={178}
+                      className="w-[178px] h-[178px] mx-auto"
+                    />
                   </Link>
                 </div>
-              )}
-            </>
-          ))}
+                <Link href={`/ProductDetails/${item.id}`}>
+                  <div className="text-center">
+                    <div
+                      className={`${josefinSans.className} text-[#151875] text-[18px] font-bold pt-[18px]`}
+                    >
+                      {item.title}
+                    </div>
+                    <div className="mt-[8px] mb-[15px]">
+                      <CircleColor />
+                    </div>
+                    <div className="flex justify-center items-center gap-x-[10px]">
+                      <div
+                        className={`${josefinSans.className} text-[#151875] text-[14px] font-normal`}
+                      >
+                        ${item.price}
+                      </div>
+                      {item.discountPercentage > 0 && (
+                        <div
+                          className={`${josefinSans.className} text-[#FB2E86] text-[14px] font-normal line-through`}
+                        >
+                          $
+                          {(
+                            (item.price / (100 - item.discountPercentage)) *
+                            100
+                          ).toFixed(2)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))
+          )}
         </div>
       </div>
       <ToastContainer
