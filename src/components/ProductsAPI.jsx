@@ -111,14 +111,16 @@ const ProductsAPI = () => {
     setSortBy(value);
   };
   const filteredProducts = selectedPrice
-  ? filterPrice
-  : products.filter((product) => {
-      const matchesCategory = selectedCategory
-        ? product.category === selectedCategory
-        : true;
-      const matchesBrand = selectedBrand ? product.brand === selectedBrand : true;
-      return matchesCategory && matchesBrand;
-    });
+    ? filterPrice
+    : products.filter((product) => {
+        const matchesCategory = selectedCategory
+          ? product.category === selectedCategory
+          : true;
+        const matchesBrand = selectedBrand
+          ? product.brand === selectedBrand
+          : true;
+        return matchesCategory && matchesBrand;
+      });
 
   return (
     <>
